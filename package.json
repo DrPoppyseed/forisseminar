@@ -4,7 +4,9 @@
   "description": "The first, newly designed forisseminar website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "author": "Haruki Jay Shimada",
   "license": "ISC",
@@ -13,11 +15,14 @@
     "nodemon": "^2.0.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
     "compression-webpack-plugin": "^3.1.0",
+    "fibers": "^4.0.2",
     "html-webpack-plugin": "^4.2.0",
+    "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",

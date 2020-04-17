@@ -6,7 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-    entry: ['babel-polyfill', './src/js/index.js'],
+    entry: ['./src/js/index.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js'
@@ -18,10 +18,10 @@ module.exports = {
                 parallel: true,
                 sourceMap: false,
                 extractComments: 'all',
-                uglifyOption: {
-                    compress: true,
-                    output: null
-                }
+                // uglifyOption: {
+                //     compress: true,
+                //     output: null
+                // }
             }),
             new OptimizeCSSAssetsPlugin({
                 cssProcessorOptions: {
@@ -51,7 +51,7 @@ module.exports = {
         new CompressionPlugin({
             test: /\.(js|css)/
         }),
-        new UglifyJsPlugin(),
+        new UglifyJsPlugin({}),
     ],
     module: {
         rules: [
