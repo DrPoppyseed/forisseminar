@@ -6,7 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-    entry: ['./src/js/index.js'],
+    entry: ['./src/js/index.js', './src/sass/style.scss'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js'
@@ -18,10 +18,6 @@ module.exports = {
                 parallel: true,
                 sourceMap: false,
                 extractComments: 'all',
-                // uglifyOption: {
-                //     compress: true,
-                //     output: null
-                // }
             }),
             new OptimizeCSSAssetsPlugin({
                 cssProcessorOptions: {
@@ -45,8 +41,8 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
+            filename: "css/style.css",
+            template: "./src/sass/style.scss"
         }),
         new CompressionPlugin({
             test: /\.(js|css)/
@@ -63,20 +59,25 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/i,
                 use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
                     {
-                        loader: 'css-loader',
+                        loader: 'file-loader',
                         options: {
-                            minimize: true,
-                            sourceMap: true
+                            name: '../dist/css/[name].css'
                         }
                     },
                     {
-                        loader: "sass-loader"
+                        loader: 'sass-loader'
                     }
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader'
                 ]
             }
         ]
