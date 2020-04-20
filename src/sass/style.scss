@@ -1,228 +1,187 @@
-// #menuToggle
-// {
-//   display: block;
-//   position: relative;
-//   top: 50px;
-//   left: 50px;
-  
-//   z-index: 1;
-  
-//   -webkit-user-select: none;
-//   user-select: none;
-// }
+@charset 'utf-8';
+@import 'partials/mixins';
+@import 'partials/variables';
 
-// #menuToggle a
-// {
-//   text-decoration: none;
-//   color: #232323;
-  
-//   transition: color 0.3s ease;
-// }
+* {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-// #menuToggle a:hover
-// {
-//   color: tomato;
-// }
-
-
-// #menuToggle input
-// {
-//   display: block;
-//   width: 40px;
-//   height: 32px;
-//   position: absolute;
-//   top: -7px;
-//   left: -5px;
-  
-//   cursor: pointer;
-  
-//   opacity: 0; /* hide this */
-//   z-index: 2; /* and place it over the hamburger */
-  
-//   -webkit-touch-callout: none;
-// }
-
-// /*
-//  * Just a quick hamburger
-//  */
-// #menuToggle span
-// {
-//   display: block;
-//   width: 33px;
-//   height: 4px;
-//   margin-bottom: 5px;
-//   position: relative;
-  
-//   background: #cdcdcd;
-//   border-radius: 3px;
-  
-//   z-index: 1;
-  
-//   transform-origin: 4px 0px;
-  
-//   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-//               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-//               opacity 0.55s ease;
-// }
-
-// #menuToggle span:first-child
-// {
-//   transform-origin: 0% 0%;
-// }
-
-// #menuToggle span:nth-last-child(2)
-// {
-//   transform-origin: 0% 100%;
-// }
-
-// /* 
-//  * Transform all the slices of hamburger
-//  * into a crossmark.
-//  */
-// #menuToggle input:checked ~ span
-// {
-//   opacity: 1;
-//   transform: rotate(45deg) translate(-2px, -1px);
-//   background: #232323;
-// }
-
-// /*
-//  * But let's hide the middle one.
-//  */
-// #menuToggle input:checked ~ span:nth-last-child(3)
-// {
-//   opacity: 0;
-//   transform: rotate(0deg) scale(0.2, 0.2);
-// }
-
-// /*
-//  * Ohyeah and the last one should go the other direction
-//  */
-// #menuToggle input:checked ~ span:nth-last-child(2)
-// {
-//   transform: rotate(-45deg) translate(0, -1px);
-// }
-
-// /*
-//  * Make this absolute positioned
-//  * at the top left of the screen
-//  */
-// #menu
-// {
-//   position: absolute;
-//   width: 300px;
-//   margin: -100px 0 0 -50px;
-//   padding: 50px;
-//   padding-top: 125px;
-  
-//   background: #ededed;
-//   list-style-type: none;
-//   -webkit-font-smoothing: antialiased;
-//   /* to stop flickering of text in safari */
-  
-//   transform-origin: 0% 0%;
-//   transform: translate(-100%, 0);
-  
-//   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-// }
-
-// #menu li
-// {
-//   padding: 10px 0;
-//   font-size: 22px;
-// }
-
-// /*
-//  * And let's slide it in from the left
-//  */
-// #menuToggle input:checked ~ ul
-// {
-//   transform: none;
-// }
+.access__icon {
+    height: 5rem;
+}
+.social_icon {
+    height: 5rem;
+}
 
 html {
     body {
-        header {
-            .hero {
-                .hero__textbox {
-                    .button {
-                        // --offset: 10px;
-                        // --border-size: 2px;
-                        
-                        display: block;
-                        position: relative;
-                        padding: 1.5em 3em;
-                        appearance: none;
-                        border: 0;
-                        background: transparent;
-                        color: #e55743;
-                        text-transform: uppercase;
-                        letter-spacing: .25em;
-                        outline: none;
-                        cursor: pointer;
-                        font-weight: bold;
-                        border-radius: 0;
-                        box-shadow: inset 0 0 0 var(--border-size) currentcolor;
-                        transition: background .8s ease;
-                        
-                        &:hover {
-                            background: rgba(100, 0, 0, .03);
-                        }
-                        
-                        &__horizontal,
-                        &__vertical {
-                            position: absolute;
-                            top: var(--horizontal-offset, 0);
-                            right: var(--vertical-offset, 0);
-                            bottom: var(--horizontal-offset, 0);
-                            left: var(--vertical-offset, 0);
-                            transition: transform .8s ease;
-                            will-change: transform;
-                            
-                            &::before {
-                                content: '';
-                                position: absolute;
-                                border: inherit;
-                            }
-                        }
-                        
-                        &__horizontal {
-                            --vertical-offset: calc(var(--offset) * -1);
-                            border-top: var(--border-size) solid currentcolor;
-                            border-bottom: var(--border-size) solid currentcolor;
-                            
-                            &::before {
-                                top: calc(var(--vertical-offset) - var(--border-size));
-                                bottom: calc(var(--vertical-offset) - var(--border-size));
-                                left: calc(var(--vertical-offset) * -1);
-                                right: calc(var(--vertical-offset) * -1);
-                            }
-                        }
-                        
-                        &:hover &__horizontal {
-                            transform: scaleX(0);
-                        }
-                        
-                        &__vertical {
-                            --horizontal-offset: calc(var(--offset) * -1);
-                            border-left: var(--border-size) solid currentcolor;
-                            border-right: var(--border-size) solid currentcolor;
-                            
-                            &::before {
-                                top: calc(var(--horizontal-offset) * -1);
-                                bottom: calc(var(--horizontal-offset) * -1);
-                                left: calc(var(--horizontal-offset) - var(--border-size));
-                                right: calc(var(--horizontal-offset) - var(--border-size));
-                            }
-                        }
-                        
-                        &:hover &__vertical {
-                            transform: scaleY(0);
+        background-color: #2D2C29;
+        color: white;
+        // display: flex;
+        .page__header {
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            
+            .header_nav {
+                font-family: $font-sans-serif;
+                background-color: black;
+                height: 4rem;
+                .header_nav__logo {
+                    position: absolute;
+                    left: 50%;
+                    top: 2rem;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    align-items: center;
+                    #header_nav__logo-img {
+                        height: 2rem;
+                    }
+                    #header_nav__logo-text {
+                        @include normalize-link(white);
+                        font-size: 1.5rem;
+                    }
+                }
+                .header_nav__items {
+                    float: right;
+                    margin-right: 5rem;
+                    padding: 1.2rem;
+                    .header_nav__item {
+                        display: inline-block;
+                        a {
+                            margin-right: 4rem;
+                            font-size: 1rem; 
+                            @include normalize-link(white);
                         }
                     }
                 }
             }
-                
+
+            .hero {
+                .hero__imgbox {
+                    .hero__img {
+                        width: 40%;
+                        height: 50%;
+                        position: absolute;
+                        top: 20%;
+                        right: 50%;
+                    }
+                }
+
+                .hero__textbox {
+                    font-size: 2rem;
+                    float: right;
+                    padding: 11rem 5rem;
+                    display: block;
+
+                    .hero__textbox_title {
+                        font-size: 4rem;
+                    }
+
+                    .hero__textbox_collab {
+                        float: left;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        .collab__node {
+                            display: flex;
+                            .collab__node_logo {
+                                height: 2.8rem;
+                            }
+                            .collab__node_text {
+                                margin-left: 0.5rem;
+                                font-size: 1.9rem;
+                                font-weight: 400;
+                            }
+                        }
+                        .collab__node--01 {
+                            .collab__node_text--01 {
+                                font-family: $font-sans-serif;
+                                font-size: 1.7rem;
+                            }
+                            .collab__node_logo--01 {
+                                height: 2.8rem;
+                            }
+                        }
+                        .collab__node--02 {
+                            padding-top: 0.3rem;
+                            .collab__node_logo--02 {
+                                border-radius: 0.5rem;
+                                height: 2rem;
+
+                            }
+                            .collab__node_text--02 {
+                                margin-left: 1rem;
+                            }
+                        }
+                        .collab__multiply_icon {
+                            height: 3rem;
+                            margin-right: 1rem;
+                            margin-left: 1rem;
+                        }
+                    }
+
+                    // .hero__textbox_collab:after {
+                    //     @include border-line(50rem, 1rem, white);
+                    // }
+
+                    .hero__textbox_text {
+                        float: left;
+                        line-height: 3rem;
+                        font-size: 1.6rem;
+                        padding: 7rem 1rem 5rem 0;
+                    }
+                    .button--hero {
+                        float: left;
+                    }
+                }
+
+                .banner {
+                    background-color: black;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    padding: 2rem 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .banner__title {
+                        font-size: 1.6rem;
+                        margin-bottom: 2rem;
+                    }
+
+                    .banner__imgs {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .banner__img {
+                            display: inline-block;
+                            height: 2rem;
+                            padding: 0 2%;
+                        }
+
+                        .banner__img--02 { height: 4rem; }
+                        .banner__img--03 { height: 3rem; }
+                        .banner__img--04 { height: 2.5rem; }
+                        .banner__img--05 { height: 1.5rem; }
+                        .banner__img--06 { height: 2.5rem; }
+                        .banner__img--08 { height: 3.5rem; }
+                    }
+                }
+            }
+        }
+
+        main {
+            
         }
     }
 }

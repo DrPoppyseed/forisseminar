@@ -22,16 +22,22 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='./css/grid.css'>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Foris seminar</title>
 </head>
 <body>
-    <header>
-        <div class="logo_foris">
-            <img src="./img/logo_foris.png" alt="Foris logo">
-            <a href="https://foris.work" class="link_text">FORIS</a>
-        </div>
+    <header class="page__header"> 
         <nav class='header_nav'>
+            <div class="header_nav__logo">
+                <img id="header_nav__logo-img" src="./img/logo_foris.png" alt="Foris logo">
+                <a id='header_nav__logo-text' href="https://foris.work" class="link_text">FORIS</a>
+            </div>
+            <ul class='header_nav__items'>
+                <li class='header_nav__item'><a href="#">FORISについて</a></li>
+                <li class='header_nav__item'><a href="#">コンタクト</a></li>
+            </ul>
             <!-- <div id="menuToggle">
                 <input type="checkbox" />
                 <span></span>
@@ -42,14 +48,12 @@
                     <a href="#"><li>Contact</li></a>
                 </ul>
             </div> -->
-            <ul>
-                <li><a href="#">FORISについて</a></li>
-                <li><a href="#">コンタクト</a></li>
-            </ul>
         </nav><!--header_nav-->
-        <div class="hero">
-            <img src="./img/bg_hero_01.jpg" alt="hero image">
-            <article class="hero__textbox">
+        <div class="hero row">
+            <div class="hero__imgbox">
+                <img class="hero__img" src="./img/bg_hero_01.jpg" alt="hero image">
+            </div>
+            <article class="hero__textbox col span-1-of-2">
                 <h1 class='hero__textbox_title'>CAを夢見るあなたへ</h1>
                 <div class='hero__textbox_collab collab'>
                     <div class='collab__node collab__node--01'>
@@ -63,9 +67,9 @@
                     </div><!--collab__node--01-->
                 </div><!--hero__textbox_collab-->
                 <p class='hero__textbox_text'>
-                    ここから夢の客室乗務員へご案内致します。
-                    世界中どこにいても受講できるオンラインのFORISエアラインセミナー。
-                    選りすぐりのFORIS特別講師より、CAへの最大の近道をご提供させて頂きます。
+                    ここから夢の客室乗務員へご案内致します。<br>
+                    世界中どこにいても受講できるオンラインのFORISエアラインセミナー。<br>
+                    選りすぐりのFORIS特別講師より、CAへの最大の近道をご提供させて頂きます。<br>
                     あなたが世界で羽ばたかれますようサポートさせて頂きます。
                 </p><!--hero__textbox_text-->
                 <button class="button button--hero">
@@ -76,14 +80,16 @@
             </article><!--hero__textbox-->
             <div class="banner">
                 <h2 class='banner__title'>一流エアラインへの徹底対策</h2>
-                <img class='banner__img banner__img--01' src='./img/logo_airlines_01.png' alt='airline logo 1' >
-                <img class='banner__img banner__img--02' src='./img/logo_airlines_02.png' alt='airline logo 2' >
-                <img class='banner__img banner__img--03' src='./img/logo_airlines_03.png' alt='airline logo 3' >
-                <img class='banner__img banner__img--04' src='./img/logo_airlines_04.png' alt='airline logo 4' >
-                <img class='banner__img banner__img--05' src='./img/logo_airlines_05.png' alt='airline logo 5' >
-                <img class='banner__img banner__img--06' src='./img/logo_airlines_06.png' alt='airline logo 6' >
-                <img class='banner__img banner__img--07' src='./img/logo_airlines_07.png' alt='airline logo 7' >
-                <img class='banner__img banner__img--08' src='./img/logo_airlines_08.png' alt='airline logo 8' >
+                <div class="banner__imgs">
+                    <img class='banner__img banner__img--01' src='./img/logo_airlines_01.png' alt='airline logo 1' >
+                    <img class='banner__img banner__img--02' src='./img/logo_airlines_02.png' alt='airline logo 2' >
+                    <img class='banner__img banner__img--03' src='./img/logo_airlines_03.png' alt='airline logo 3' >
+                    <img class='banner__img banner__img--04' src='./img/logo_airlines_04.png' alt='airline logo 4' >
+                    <img class='banner__img banner__img--05' src='./img/logo_airlines_05.png' alt='airline logo 5' >
+                    <img class='banner__img banner__img--06' src='./img/logo_airlines_06.png' alt='airline logo 6' >
+                    <img class='banner__img banner__img--07' src='./img/logo_airlines_07.png' alt='airline logo 7' >
+                    <img class='banner__img banner__img--08' src='./img/logo_airlines_08.png' alt='airline logo 8' >
+                </div>
             </div><!--banner-->
         </div><!--hero-->
     </header>
@@ -378,7 +384,7 @@
             <h3>FORIS<span>For Internation Students</span></h3>
         </div><!--footer__logo-->
         <div class='footer__feature footer__feature--service'>
-            <h4 class=''>サービス</h4>
+            <h4 class='footer__feature_title footer__feature_title--01'>サービス</h4>
             <ul>
                 <li>クッキーポリシー</li>
                 <li>個人情報保護方針</li>
@@ -386,15 +392,15 @@
             </ul>
         </div><!--footer__feature--service-->
         <div class='footer__feature footer__feature--contact'>
-            <h4 class=''>コンタクト</h4>
+            <h4 class='footer__feature_title footer__feature_title--02'>コンタクト</h4>
             <p class=''>Email: <a href='mailto:foris.ryuugakusoudann@gmail.com'>foris.ryuugakusoudann@gmail.com</a></p>
         </div><!--footer__feature--contact-->
         <div class='footer__feature footer__feature--social-media'>
-            <h4 class=''>ソーシャルメディア</h4>
+            <h4 class='footer__feature_title footer__feature_title--03'>ソーシャルメディア</h4>
             <ul>
-                <li id='logo_line'><a href="https://line.me/R/ti/p/%40936mkyyk#~"><img src="./img/logo_footer_social_01.png" alt="line logo"></a></li>
-                <li id='logo_instagram'><a href="https://www.instagram.com/foris_ryugaku"><img src="./img/logo_footer_social_02.png" alt="instagram logo"></a></li>
-                <li id='logo_facebook'><a href="#"><img src="./img/logo_footer_social_03.png" alt="facebook logo"></a></li>
+                <li><a href="https://line.me/R/ti/p/%40936mkyyk#~"><img class='social_icon logo_line' src="./img/logo_footer_social_01.png" alt="line logo"></a></li>
+                <li><a href="https://www.instagram.com/foris_ryugaku"><img class='social_icon logo_instagram' src="./img/logo_footer_social_02.png" alt="instagram logo"></a></li>
+                <li><a href="#"><img class='social_icon logo_facebook' src="./img/logo_footer_social_03.png" alt="facebook logo"></a></li>
             </ul>
         </div><!--footer__feature--social-media-->
         <p class='footer__copyright'>Copyright &copy; 2020 Yakumo Asano, Kohei Sano, <span>Haruki Jay Shimada. All Rights Resolved.</span></p>
