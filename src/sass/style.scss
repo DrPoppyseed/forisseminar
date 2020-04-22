@@ -90,13 +90,50 @@
     --border-size: 1px;
     padding: 30rem;
 }
+.header_nav {
+    font-family: $font-sans-serif;
+    background-color: black;
+    height: 4rem;
+    z-index: 9999;
+    position: fixex;
+    width: 100%;
+    
+    .header_nav__logo {
+        position: absolute;
+        left: 50%;
+        top: 2rem;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        #header_nav__logo-img {
+            height: 2rem;
+        }
+        #header_nav__logo-text {
+            @include normalize-link(white);
+            font-size: 1.5rem;
+        }
+    }
+    .header_nav__items {
+        float: right;
+        margin-right: 5rem;
+        padding: 1.2rem;
+        .header_nav__item {
+            display: inline-block;
+            a {
+                margin-right: 4rem;
+                font-size: 1rem; 
+                @include normalize-link(white);
+            }
+        }
+    }
+}
 
 html {
     body {
-        background-color: #2D2C29;
         color: white;
-        // display: flex;
-
+        section:not(.reasons_section) {
+            background-color: #2D2C29;
+        }
         .parallax {
             perspective: 1px;
             height: 100vh;
@@ -110,60 +147,70 @@ html {
                 bottom: 0;
             }
             .parallax_layer--background {
-                transform: translateZ(-100px) scale(100);
-                background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
+                position: relative;
+                overflow: hidden;
+                &::before {
+                    // transform: translateZ(-100px) scale(100);
+                    background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                    content: '';
+                    left: 0;
+                    top: 0;
+                    position: fixed;
+                    will-change: transform;
+                    z-index: -1;
+                    height: 100%;
+                    width: 100%;
+                }
             }
             .parallax_layer--foreground {
                 transform: translateZ(0);
-                // background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
-                // background-repeat: no-repeat;
-                // background-size: cover;
-                // background-position: center;
-                // background-attachment: fixed;
             }
         }
-
         .page__header {
             height: 100vh;
             width: 100%;
             
-            .header_nav {
-                font-family: $font-sans-serif;
-                background-color: black;
-                height: 4rem;
-                .header_nav__logo {
-                    position: absolute;
-                    left: 50%;
-                    top: 2rem;
-                    transform: translate(-50%, -50%);
-                    display: flex;
-                    align-items: center;
-                    #header_nav__logo-img {
-                        height: 2rem;
-                    }
-                    #header_nav__logo-text {
-                        @include normalize-link(white);
-                        font-size: 1.5rem;
-                    }
-                }
-                .header_nav__items {
-                    float: right;
-                    margin-right: 5rem;
-                    padding: 1.2rem;
-                    .header_nav__item {
-                        display: inline-block;
-                        a {
-                            margin-right: 4rem;
-                            font-size: 1rem; 
-                            @include normalize-link(white);
-                        }
-                    }
-                }
-            }
+            // .header_nav {
+            //     font-family: $font-sans-serif;
+            //     background-color: black;
+            //     height: 4rem;
+            //     z-index: 9999;
+            //     position: fixex;
+            //     width: 100%;
+                
+            //     .header_nav__logo {
+            //         position: absolute;
+            //         left: 50%;
+            //         top: 2rem;
+            //         transform: translate(-50%, -50%);
+            //         display: flex;
+            //         align-items: center;
+            //         #header_nav__logo-img {
+            //             height: 2rem;
+            //         }
+            //         #header_nav__logo-text {
+            //             @include normalize-link(white);
+            //             font-size: 1.5rem;
+            //         }
+            //     }
+            //     .header_nav__items {
+            //         float: right;
+            //         margin-right: 5rem;
+            //         padding: 1.2rem;
+            //         .header_nav__item {
+            //             display: inline-block;
+            //             a {
+            //                 margin-right: 4rem;
+            //                 font-size: 1rem; 
+            //                 @include normalize-link(white);
+            //             }
+            //         }
+            //     }
+            // }
 
             .hero {
                 .hero__imgbox {
@@ -191,6 +238,8 @@ html {
                         display: flex;
                         flex-direction: row;
                         justify-content: center;
+                        padding-right: 5rem;
+                        border-bottom: 1px solid white;
                         .collab__node {
                             display: flex;
                             .collab__node_logo {
@@ -228,11 +277,6 @@ html {
                             margin-left: 1rem;
                         }
                     }
-
-                    // .hero__textbox_collab:after {
-                    //     @include border-line(50rem, 1rem, white);
-                    // }
-
                     .hero__textbox_text {
                         float: left;
                         line-height: 3rem;
@@ -289,14 +333,24 @@ html {
             }
 
             .reasons_section {
-                background-image: linear-gradient(rgba(34, 37, 37, 0.8), rgba(34, 37, 37, 0.8)), url('../img/bg_reasons_01.jpg');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                &::before {
+                    background-image: linear-gradient(rgba(34, 37, 37, 0.8), rgba(34, 37, 37, 0.8)), url('../img/bg_reasons_01.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                    content: '';
+                    left: 0;
+                    top: 0;
+                    position: fixed;
+                    will-change: transform;
+                    z-index: -1;
+                    height: 100%;
+                    width: 100%;
+                }
                 
                 .reasons_section__title {
                     font-size: 2rem;
@@ -340,6 +394,8 @@ html {
                 padding: 5rem 20rem;
                 display: flex;
                 flex-direction: row;
+                z-index: 999;
+                background-color: #2D2C29;
                 .profile_section__teacher-pic {
                     height: 35rem;
                 }
@@ -376,7 +432,7 @@ html {
                         }
                         .profile_section__header--02 {
                             margin-top: 0.6rem;
-                            font-size: 1.6rem;
+                            font-size: 1.4rem;
                         }
                     }
                     .profile_section__text {
@@ -388,7 +444,6 @@ html {
                     }
                 }
             }
-
             .content_section {
                 padding-right: 13%;
                 padding-left: 8%;
@@ -456,6 +511,19 @@ html {
                         font-size: 1.4rem;
                         margin-bottom: 5rem;
                     }
+                }
+            }
+            .deadline_section {
+                padding: 5rem 15%;
+                display: flex;
+                flex-direction: column;
+                .deadline_section__title {
+                    align-self: flex-end;
+                    font-size: 1.4rem;
+                    margin-bottom: 2rem;
+                }
+                .deadline_box__deadline_boxes {
+                    
                 }
             }
             .plans_section {

@@ -24,7 +24,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' href='./css/grid.css'>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
     <title>Foris seminar</title>
 </head>
 <body>
@@ -80,7 +80,7 @@
                         <div class="button__vertical"></div>
                     </button>
                 </article><!--hero__textbox-->
-                <div class="banner">
+                <div class="banner js--section-banner">
                     <h2 class='banner__title'>一流エアラインへの徹底対策</h2>
                     <div class="banner__imgs">
                         <img class='banner__img banner__img--01' src='./img/logo_airlines_01.png' alt='airline logo 1' >
@@ -106,12 +106,12 @@
                 </div>
                 <div class='list__components_row list__components_rows--02'>
                     <p class='list__component list__component--03 col span-1-of-2'>世界中のどこからでもオンライン受講</p>
-                    <p class='list__component list__component--04 col span-1-of-2'>元面接官が教える、受かる面接のしかた</p>
+                    <p class='list__component list__component--04 col span-1-of-2'>現役面接官が教える、受かる面接のしかた</p>
                 </div>
             </div>
         </section><!--reasons_section-->
         <section class='profile_section'>
-            <h2 class='profile_section__title'></h2>
+            <!-- <h2 class='profile_section__title'>講師プロフィール</h2> -->
             <img class='profile_section__teacher-pic' src='./img/pic_teacher.png' alt='pic teacher' />
             <article class='profile_section__textbox'>
                 <header class='profile_section__headerbox'>
@@ -122,7 +122,7 @@
                             <h3>Saisho Labo</h3>
                         </div>
                     </div><!--profile_section__header--top-->
-                    <p class='profile_section__header-record profile_section__header profile_section__header--02'>元外資系エアラインCA、元関西エアポートグランドスタッフ/ラウンジ採用面接官・接遇インストラクター</p>
+                    <p class='profile_section__header-record profile_section__header profile_section__header--02'>元外資系エアラインCA、現役関西エアポートグランドスタッフ/ラウンジ採用面接官・接遇インストラクター</p>
                 </header>
                 <p class='profile_section__text profile_section__text--01'>
                     これまでの経歴のおさらいと、それをもとにどのような人かを。どうしても岡田さんに評価学校ますます
@@ -410,7 +410,11 @@
         <section class='steps_section'>
             <h2 class='steps_section__title'>受講の流れ</h2>
             <div class='steps_section__content'>
-                <div class='steps__step_title'></div>
+                <div class='steps__step_titles'>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
                 <div class='steps__step_detail'></div>
             </div>
         </section><!--steps_section-->
@@ -444,7 +448,7 @@
         </div>
         <p class='footer__copyright footer__section--bottom'>Copyright &copy; 2020 Yakumo Asano, Kohei Sano, <span>Haruki Jay Shimada. All Rights Resolved.</span></p>
     </footer>
-    <script src='./js/bundle.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src='js/bundle.js'></script>
 </body>
 </html>
