@@ -150,7 +150,6 @@ html {
                 position: relative;
                 overflow: hidden;
                 &::before {
-                    // transform: translateZ(-100px) scale(100);
                     background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -238,7 +237,7 @@ html {
                         display: flex;
                         flex-direction: row;
                         justify-content: center;
-                        padding-right: 5rem;
+                        padding-right: 1rem;
                         border-bottom: 1px solid white;
                         .collab__node {
                             display: flex;
@@ -336,22 +335,10 @@ html {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                &::before {
-                    background-image: linear-gradient(rgba(34, 37, 37, 0.8), rgba(34, 37, 37, 0.8)), url('../img/bg_reasons_01.jpg');
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-position: center;
-                    background-attachment: fixed;
-                    content: '';
-                    left: 0;
-                    top: 0;
-                    position: fixed;
-                    will-change: transform;
-                    z-index: -1;
-                    height: 100%;
-                    width: 100%;
-                }
-                
+                background-image: linear-gradient(rgba(34, 37, 37, 0.8), rgba(34, 37, 37, 0.8)), url('../img/bg_reasons_01.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
                 .reasons_section__title {
                     font-size: 2rem;
                     margin-bottom: 1.5rem;
@@ -451,7 +438,7 @@ html {
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-attachment: fixed;
+                // background-attachment: fixed;
                 display: flex;
                 .content_section__background {
                     padding: 3rem;
@@ -522,8 +509,38 @@ html {
                     font-size: 1.4rem;
                     margin-bottom: 2rem;
                 }
-                .deadline_box__deadline_boxes {
-                    
+                .deadline_section__deadline_boxes {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    .deadline_box {
+                        width: 30%;
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        p {
+                            padding: 1rem;
+                            background-color: rgba(34, 37, 37, 0.6);
+                        }
+                        .deadline_box__season {
+                            font-size: 1.4rem;
+                            margin-bottom: 10rem;
+                        }
+                        .deadline_box__deadline_date {
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                        }
+                    }
+                    .deadline_box--01 {
+                        background-image: url('../img/bg_seasons_01.jpg');
+                    }
+                    .deadline_box--02 {
+                        background-image: url('../img/bg_seasons_02.jpg');
+                    }
+                    .deadline_box--03 {
+                        background-image: url('../img/bg_seasons_03.jpg');
+                    }
                 }
             }
             .plans_section {
@@ -542,9 +559,35 @@ html {
                     flex-direction: row;
                     justify-content: space-around;
                     .plan_box {
-                        border: 1px solid white;
+                        background-color: rgba(#DDDDDD, 1);
+                        color: black;
+                        cursor: pointer;
+                        &:before,
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            width: 4px;
+                            height: 100%;
+                            top: 0;
+                            transition: all .4s ease;
+                        }
+                        &:before {
+                            left: 0;
+                        }
+                        &:after {
+                            right: 0;
+                        }
+                        &:hover {
+                            transition: all .4s ease;
+                            box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.2);
+                            &:before,
+                            &:after {
+                                width: 50%;
+                            }
+                        }
                         position: relative;
                         .plan_box__header {
+                            z-index: 9999;
                             padding: 2rem 0rem 0rem 2rem;
                             display: flex;
                             align-items: center;
@@ -555,19 +598,19 @@ html {
                             }
                             .plan_box__title {
                                 font-size: 1.6rem;
-                                // float: right;
                             }
                         }
                         .plan_box__price {
-                            border-top: 1px solid white;
-                            border-bottom: 1px solid white;
-                            font-size: 1.6rem;
+                            z-index: 9999;
+                            font-size: 2rem;
                             padding: 2rem;
+                            text-align: center;
                             span {
                                 font-size: 1rem;
                             }
                         }
                         .plan_box__features {
+                            z-index: 9999;
                             padding-top: 1rem;
                             padding: 2rem;
                             margin-bottom: 10rem;
@@ -585,38 +628,53 @@ html {
                             }
                         }
                         .button--plans {
+                            color: black;
                             position: absolute;
                             bottom: 0;
                             left: 50%;
                             transform: translate(-50%, -50%);
                             font-size: 1.2rem;
                             padding: 1.5rem 3rem;
+                            z-index: 9999;
                         }
                     }
                     .plan_box--basic {
+                        &:before,
+                        &:after {
+                            background-color: rgba($color-basic, 0.1);
+                        }
                         .plan_box__header {
                             .plan_box__plan_icon--basic {
                                 height: 1.4rem;
                             }
                         }
                         .plan_box__price {
-                            background-image: linear-gradient(rgba(34, 37, 37, 0.4), rgba(34, 37, 37, 0.4)), url('../img/bg_plans_01.jpg');
+                            background-color: rgba($color-basic, 0.3);
                         }
                     }
                     .plan_box--standard {
+                        &:before,
+                        &:after {
+                            background-color: rgba($color-standard, 0.1);
+                        }
                         .plan_box__header {
                             .plan_box__plan_icon--standard {
                                 height: 1.7rem;
                             }
                         }
                         .plan_box__price {
-                            background-image: linear-gradient(rgba(34, 37, 37, 0.4), rgba(34, 37, 37, 0.4)), url('../img/bg_plans_01.jpg');
+                            background-color: rgba($color-standard, 0.3);
                         }
                     }
                     .plan_box--premium {
-                        .plan_box__price {
-                            background-image: linear-gradient(rgba(34, 37, 37, 0.4), rgba(34, 37, 37, 0.4)), url('../img/bg_plans_01.jpg');
+                        &:before,
+                        &:after {
+                            background-color: rgba($color-premium, 0.1);
                         }
+                        .plan_box__price {
+                            background-color: rgba($color-premium, 0.3);
+                        }
+                        
                     }
                 }
             }
@@ -625,7 +683,6 @@ html {
             background-color: #535353;
             display: flex;
             flex-direction: column;
-            // align-items: center;
             padding: 3rem 10%;
             .footer__logo {
                 align-self: center;

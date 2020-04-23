@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin normalize-link($color) {
     color: $color;
     text-decoration: none;
