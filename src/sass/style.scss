@@ -131,47 +131,52 @@
 html {
     body {
         color: white;
-        section:not(.reasons_section) {
-            background-color: #2D2C29;
-        }
-        .parallax {
-            perspective: 1px;
-            height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
-            .parallax_layer {
-                position: absolute;
-                top: 0;
-                right: 0;
-                left: 0;
-                bottom: 0;
-            }
-            .parallax_layer--background {
-                position: relative;
-                overflow: hidden;
-                &::before {
-                    background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-position: center;
-                    background-attachment: fixed;
-                    content: '';
-                    left: 0;
-                    top: 0;
-                    position: fixed;
-                    will-change: transform;
-                    z-index: -1;
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-            .parallax_layer--foreground {
-                transform: translateZ(0);
-            }
-        }
+        // section:not(.reasons_section) {
+        //     background-color: #2D2C29;
+        // }
+        background-color: #2D2C29;
+        // .parallax {
+        //     perspective: 1px;
+        //     height: 100vh;
+        //     overflow-x: hidden;
+        //     overflow-y: auto;
+        //     .parallax_layer {
+        //         position: absolute;
+        //         top: 0;
+        //         right: 0;
+        //         left: 0;
+        //         bottom: 0;
+        //     }
+        //     .parallax_layer--background {
+        //         position: relative;
+        //         overflow: hidden;
+        //         &::before {
+        //             background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
+        //             background-repeat: no-repeat;
+        //             background-size: cover;
+        //             background-position: center;
+        //             // background-attachment: fixed;
+        //             content: '';
+        //             left: 0;
+        //             top: 0;
+        //             position: fixed;
+        //             will-change: transform;
+        //             z-index: -1;
+        //             height: 100%;
+        //             width: 100%;
+        //         }
+        //     }
+        //     .parallax_layer--foreground {
+        //         transform: translateZ(0);
+        //     }
+        // }
         .page__header {
             height: 100vh;
             width: 100%;
+            background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01-new.jpg') ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
             
             // .header_nav {
             //     font-family: $font-sans-serif;
@@ -361,7 +366,6 @@ html {
                             font-size: 1.6rem;
                             margin-left: 0;
                         }
-
                         .list__component--01,
                         .list__component--03 {
                             margin-right: 3%;
@@ -371,9 +375,6 @@ html {
                             margin-left: 3%;
                         }
                     }
-
-
-                    
                 }
             }
 
@@ -381,8 +382,6 @@ html {
                 padding: 5rem 20rem;
                 display: flex;
                 flex-direction: row;
-                z-index: 999;
-                background-color: #2D2C29;
                 .profile_section__teacher-pic {
                     height: 35rem;
                 }
@@ -438,7 +437,6 @@ html {
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                // background-attachment: fixed;
                 display: flex;
                 .content_section__background {
                     padding: 3rem;
@@ -549,7 +547,6 @@ html {
                 flex-direction: column;
                 .plans_section__title {
                     align-self: flex-end;
-                    // float: right;
                     font-size: 1.4rem;
                     margin-bottom: 2rem;
                 }
@@ -675,6 +672,28 @@ html {
                             background-color: rgba($color-premium, 0.3);
                         }
                         
+                    }
+                }
+            }
+            .steps_section {
+                padding: 3rem 15%;
+                display: flex;
+                flex-direction: column;
+                .steps_section__title {
+                    font-size: 1.6rem;
+                    align-self: flex-end;
+                }
+                .steps_section__content {
+                    .steps__step_titles {
+                        ol {
+                            li { 
+                                font-size: 1.4rem;
+                                margin-bottom: 1.5rem;
+                            }
+                        }
+                    }
+                    .steps__step_detail {
+
                     }
                 }
             }
