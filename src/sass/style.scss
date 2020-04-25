@@ -83,90 +83,17 @@
     &:hover &__vertical {
         transform: scaleY(0);
     }
-    
 }
 .botton--plans {
     --offset: 5px;
     --border-size: 1px;
     padding: 30rem;
 }
-// .header_nav {
-//     font-family: $font-sans-serif;
-//     background-color: black;
-//     height: 4rem;
-//     z-index: 9999;
-//     position: fixex;
-//     width: 100%;
-    
-//     .header_nav__logo {
-//         position: absolute;
-//         left: 50%;
-//         top: 2rem;
-//         transform: translate(-50%, -50%);
-//         display: flex;
-//         align-items: center;
-//         #header_nav__logo-img {
-//             height: 2rem;
-//         }
-//         #header_nav__logo-text {
-//             @include normalize-link(white);
-//             font-size: 1.5rem;
-//         }
-//     }
-//     .header_nav__items {
-//         float: right;
-//         margin-right: 5rem;
-//         padding: 1.2rem;
-//         .header_nav__item {
-//             display: inline-block;
-//             a {
-//                 margin-right: 4rem;
-//                 font-size: 1rem; 
-//                 @include normalize-link(white);
-//             }
-//         }
-//     }
-// }
 
 html {
     body {
         color: white;
         background-color: #2D2C29;
-        // .parallax {
-        //     perspective: 1px;
-        //     height: 100vh;
-        //     overflow-x: hidden;
-        //     overflow-y: auto;
-        //     .parallax_layer {
-        //         position: absolute;
-        //         top: 0;
-        //         right: 0;
-        //         left: 0;
-        //         bottom: 0;
-        //     }
-        //     .parallax_layer--background {
-        //         position: relative;
-        //         overflow: hidden;
-        //         &::before {
-        //             background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01.jpg') ;
-        //             background-repeat: no-repeat;
-        //             background-size: cover;
-        //             background-position: center;
-        //             // background-attachment: fixed;
-        //             content: '';
-        //             left: 0;
-        //             top: 0;
-        //             position: fixed;
-        //             will-change: transform;
-        //             z-index: -1;
-        //             height: 100%;
-        //             width: 100%;
-        //         }
-        //     }
-        //     .parallax_layer--foreground {
-        //         transform: translateZ(0);
-        //     }
-        // }
         .page__header {
             height: 100vh;
             width: 100%;
@@ -212,6 +139,18 @@ html {
                     }
                     .header_nav__item--top {
                         cursor: pointer;
+                    }
+                }
+                .progress__container {
+                    width: 100%;
+                    height: 1px;
+                    background: #5A5959;
+                    position: absolute;
+                    bottom: 0;
+                    .progress__bar {
+                        width: 0%;
+                        height: 1px;
+                        background: white;
                     }
                 }
             }
@@ -494,6 +433,7 @@ html {
                 padding: 3rem 15%;
                 display: flex;
                 flex-direction: column;
+                // font-family: $font-sans-serif;
                 .steps_section__title {
                     font-size: 1.4rem;
                     align-self: flex-end;
@@ -501,16 +441,44 @@ html {
                 }
                 .steps_section__content {
                     .steps__step_titles {
-                        ol {
+                        .steps_titles {
                             li { 
                                 font-size: 1.4rem;
                                 margin-bottom: 1.5rem;
+                                padding: 1rem;
+                                cursor: pointer;
+                                &:hover {
+                                    background-color: rgba(#5A5959, 0.2);
+                                    border-radius: 0.5rem;
+                                }
+                            }
+                            li.current {
+                                transition: 0.5s ease;
+                                font-weight: 600;
+                                background-color: #5A5959;
+                                padding: 1rem;
+                                border-radius: 0.5rem;
                             }
                         }
                     }
                     .steps__step_detail {
-                        padding: 5rem;
-
+                        transition: 0.5s ease;
+                        padding: 10%;
+                        .steps__step_detail--title {
+                            h3 {
+                                font-size: 1.6rem;
+                                margin-bottom: 3rem;
+                                line-height: 2.4rem;
+                            }
+                        }
+                        .steps__step_detail--text {
+                            p {
+                                font-family: $font-sans-serif;
+                                font-weight: 300;
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                            }
+                        }
                     }
                 }
             }

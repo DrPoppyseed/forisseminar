@@ -17,9 +17,14 @@
     <link rel="subresource" href='./img/bg_hero_01.jpg'>
     <link rel="subresource" href='./img/bg_reasons_01.jpg'>
     <link rel="subresource" href='./css/style.css'>
+    <link rel="subresource" href='./assets/owl.carousel.min.css'>
+    <link rel="subresource" href='./assets/owl.theme.default.min.css'>
+    <link rel="subresource" href='./assets/owl.carousel.js'>
+    <link rel="subresource" href='./assets/jquery.waypoints.min.js'>
+    <link rel="subresource" href='./js/bundle.js'>
     <link rel="prefetch" href='./css/grid.css'>
     <link rel="prefetch" href='./img/pic_teacher.png'>
-    <link rel="prefetch" href='./img/bg_classes_01.jpg'>
+    <link rel="prefetch" href='./img/bg_classes.jpg'>
     <link rel="prefetch" href='./img/bg_seasons_01.jpg'>
     <link rel="prefetch" href='./img/bg_seasons_02.jpg'>
     <link rel="prefetch" href='./img/bg_seasons_03.jpg'>
@@ -54,6 +59,8 @@
     <meta name="theme-color" content="#ffffff">
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='./assets/owl.carousel.min.css'>
+    <link rel='stylesheet' type='text/css' href='./assets/owl.theme.default.min.css'>
     <link rel='stylesheet' type='text/css' href='./css/grid.css'>
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
     <title>Foris seminar</title>
@@ -72,6 +79,9 @@
                     <li class='header_nav__item'><a href="#">コンタクト</a></li>
                     <li class='header_nav__item header_nav__item--top'>トップへ戻る</li>
                 </ul>
+                <div class='progress__container'>
+                    <div class='progress__bar'></div>
+                </div>
                 <!-- <div id="menuToggle">
                     <input type="checkbox" />
                     <span></span>
@@ -343,7 +353,7 @@
             <h2 class='steps_section__title'>受講の流れ</h2>
             <div class='steps_section__content row'>
                 <div class='steps__step_titles col span-1-of-3'>
-                    <ol start='1'>
+                    <ol start='1' class='steps_titles'>
                         <li class='steps_title steps_title--01'>プランご購入</li>
                         <li class='steps_title steps_title--02'>お支払い</li>
                         <li class='steps_title steps_title--03'>セミナーで使用するテキストの購入（プレミアムプランご購入の方はテキストが付属です）</li>
@@ -354,7 +364,8 @@
                     </ol>
                 </div>
                 <div class='steps__step_detail col span-2-of-3'>
-
+                    <div class='steps__step_detail--title'></div>
+                    <div class='steps__step_detail--text'></div>
                 </div>
             </div>
         </section><!--steps_section-->
@@ -525,6 +536,8 @@
         <p class='footer__copyright footer__section--bottom'>Copyright &copy; 2020 Yakumo Asano, Kohei Sano, <span>Haruki Jay Shimada. All Rights Reserved.</span></p>
     </footer>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src='assets/owl.carousel.min.js'></script>
     <script type="text/javascript" src='js/bundle.js'></script>
 </body>
 </html>
