@@ -98,10 +98,10 @@ html {
             height: 100vh;
             width: 100%;
             background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01-new.jpg') ;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-position: center;
-                    background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             
             .header_nav {
                 font-family: $font-sans-serif;
@@ -156,22 +156,24 @@ html {
                 }
             }
             .hero {
+                padding-top: 8%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
                 .hero__imgbox {
+                    // margin-right:5rem;
                     .hero__img {
-                        width: 40%;
-                        height: 50%;
-                        position: absolute;
-                        top: 20%;
-                        right: 50%;
+                        width: 90%;
+                        height: auto;
+                        float: right;
                     }
                 }
 
                 .hero__textbox {
                     font-size: 2rem;
                     float: right;
-                    padding: 11rem 5rem;
                     display: block;
-
+                    margin-left: 5rem;
                     .hero__textbox_title {
                         font-size: 4rem;
                     }
@@ -224,7 +226,7 @@ html {
                         float: left;
                         line-height: 3rem;
                         font-size: 1.6rem;
-                        padding: 7rem 1rem 5rem 0;
+                        padding: 15% 1rem 5rem 0;
                     }
                     .button--hero {
                         float: left;
@@ -321,6 +323,7 @@ html {
                 display: flex;
                 flex-direction: row;
                 .profile_section__teacher-pic {
+                    align-self: center;
                     height: 35rem;
                 }
                 .profile_section__textbox {
