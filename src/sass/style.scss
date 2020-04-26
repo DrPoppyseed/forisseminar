@@ -27,10 +27,9 @@
     font-weight: bold;
     border-radius: 0;
     box-shadow: inset 0 0 0 var(--border-size) currentcolor;
-    transition: background .8s ease;
-    
+    transition: background-color .8s ease;
     &:hover {
-        background: rgba(100, 0, 0, .03);
+        background-color: rgba(100, 0, 0, .03);
     }
     
     &__horizontal,
@@ -161,24 +160,37 @@ html {
                 flex-direction: row;
                 align-items: center;
                 .hero__imgbox {
-                    // margin-right:5rem;
                     .hero__img {
                         width: 90%;
                         height: auto;
-                        float: right;
+                        float: right;   
+                        @include ss_over1920 {
+                            width: 900px;
+                            height: auto;
+                        }
+                        @include ss_1920 {
+                            width: 80%;
+                        }
+                        @include ss_1280 {
+                            display: inline-block;
+                            object-fit: cover;
+                            height: 450px;
+                            width: 80%;
+                        }
                     }
                 }
 
                 .hero__textbox {
                     font-size: 2rem;
-                    float: right;
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
                     margin-left: 5rem;
                     .hero__textbox_title {
                         font-size: 4rem;
+                        align-self: flex-start;
                     }
-
                     .hero__textbox_collab {
+                        align-self: flex-start;
                         float: left;
                         display: flex;
                         flex-direction: row;
@@ -187,6 +199,7 @@ html {
                         border-bottom: 1px solid white;
                         .collab__node {
                             display: flex;
+                            flex-direction: row;
                             .collab__node_logo {
                                 height: 2.8rem;
                             }
@@ -223,16 +236,15 @@ html {
                         }
                     }
                     .hero__textbox_text {
-                        float: left;
+                        align-self: flex-start;
                         line-height: 3rem;
                         font-size: 1.6rem;
                         padding: 15% 1rem 5rem 0;
                     }
                     .button--hero {
-                        float: left;
+                        align-self: flex-start;
                     }
                 }
-
                 .banner {
                     background-color: black;
                     width: 100%;
@@ -321,53 +333,62 @@ html {
             .profile_section {
                 padding: 5rem 20rem;
                 display: flex;
-                flex-direction: row;
-                .profile_section__teacher-pic {
-                    align-self: center;
-                    height: 35rem;
+                flex-direction: column;
+                .profile_section__title {
+                    margin-bottom: 3rem;
+                    align-self: flex-end;
+                    font-size: 1.4rem;
                 }
-                .profile_section__textbox {
-                    margin-left: 5rem;
-                    margin-top: 2rem;
-                    .profile_section__headerbox {
-                        .profile_section__header--01 {
-                            display: flex;
-                            border-bottom: 1px solid white;
-                            .profile_section__header-title {
-                                font-size: 3rem;
-                                display: inline-block;
-                                align-self: flex-end;
-                            }
-                            .profile_section__header-company {
+                .profile_section__content {
+                    display: flex;
+                    flex-direction: row;
+                    .profile_section__teacher-pic {
+                        align-self: center;
+                        height: 35rem;
+                    }
+                    .profile_section__textbox {
+                        margin-left: 5rem;
+                        margin-top: 2rem;
+                        .profile_section__headerbox {
+                            .profile_section__header--01 {
                                 display: flex;
-                                flex-direction: row;
-                                margin-left: 10rem;
-                                padding-bottom: 0.6rem;;
-                                img {
-                                    border-radius: 0.5rem;
-                                    height: 2rem; 
+                                border-bottom: 1px solid white;
+                                .profile_section__header-title {
+                                    font-size: 3rem;
+                                    display: inline-block;
                                     align-self: flex-end;
                                 }
-                                h3 {
-                                    margin-left: 1rem;
-                                    font-size: 1.6rem;
-                                    letter-spacing: 0.1rem;
-                                    font-weight: 300;
-                                    align-self: flex-end;
+                                .profile_section__header-company {
+                                    display: flex;
+                                    flex-direction: row;
+                                    margin-left: 10rem;
+                                    padding-bottom: 0.6rem;;
+                                    img {
+                                        border-radius: 0.5rem;
+                                        height: 2rem; 
+                                        align-self: flex-end;
+                                    }
+                                    h3 {
+                                        margin-left: 1rem;
+                                        font-size: 1.6rem;
+                                        letter-spacing: 0.1rem;
+                                        font-weight: 300;
+                                        align-self: flex-end;
+                                    }
                                 }
                             }
+                            .profile_section__header--02 {
+                                margin-top: 0.6rem;
+                                font-size: 1.4rem;
+                            }
                         }
-                        .profile_section__header--02 {
-                            margin-top: 0.6rem;
-                            font-size: 1.4rem;
+                        .profile_section__text {
+                            font-size: 1.6rem;
                         }
-                    }
-                    .profile_section__text {
-                        font-size: 1.6rem;
-                    }
-                    .profile_section__text--01 {
-                        margin-top: 4rem;
-                        margin-bottom: 2rem;
+                        .profile_section__text--01 {
+                            margin-top: 4rem;
+                            margin-bottom: 2rem;
+                        }
                     }
                 }
             }
@@ -425,6 +446,7 @@ html {
                         }
                         .class_detail_box {
                             padding-top: 1.5rem;
+                            padding-right: 5rem;
                             .class_detail_text {
                                 font-size: 1.4rem;
                                 
@@ -620,7 +642,7 @@ html {
                             transform: translate(-50%, -50%);
                             font-size: 1.2rem;
                             padding: 1.5rem 3rem;
-                            z-index: 9999;
+                            z-index: 2;
                         }
                     }
                     .plan_box--basic {

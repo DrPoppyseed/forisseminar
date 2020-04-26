@@ -30,6 +30,31 @@ $(document).ready(() => {
     });
 });
 
+$(document).ready(() => {
+    var $windowWidth = $(window).width();
+    if ($windowWidth > 1500) {
+        $('.hero__imgbox').removeClass('span-1-of-2');
+        $('.hero__imgbox').addClass('span-3-of-5');
+        $('.hero__textbox').removeClass('span-1-of-2');
+        $('.hero__textbox').addClass('span-2-of-5');
+    }
+
+    $(window).on('resize', () => {
+        $windowWidth = $(window).width();
+        if ($windowWidth > 1500) {
+            $('.hero__imgbox').removeClass('span-1-of-2');
+            $('.hero__imgbox').addClass('span-3-of-5');
+            $('.hero__textbox').removeClass('span-1-of-2');
+            $('.hero__textbox').addClass('span-2-of-5');
+        } else if ($windowWidth <= 1500) {
+            $('.hero__imgbox').removeClass('span-3-of-5');
+            $('.hero__imgbox').addClass('span-1-of-2');
+            $('.hero__textbox').removeClass('span-2-of-5');
+            $('.hero__textbox').addClass('span-1-of-2');
+        }
+    });
+});
+
 $(document).ready(function() {
     var slides = $(".steps_titles li");
     
@@ -37,7 +62,6 @@ $(document).ready(function() {
     var slideTime = animate();
     
     $(".steps_titles li").click(function() {
-      //Reset the interval to 0 and start it again
       clearInterval(slideTime);
       slideTime = animate();
       
@@ -53,8 +77,7 @@ $(document).ready(function() {
     function slideTo(slide) {
         $(".steps_titles li").removeClass("current");
         $(slide).addClass("current");
-        slideIndex = jQuery(slide).index(); 
-        console.log(slideIndex);
+        slideIndex = jQuery(slide).index();
 
         if (slideIndex == 0) {
             $('.steps__step_detail--title').html(`<h3>プランご購入</h3>`);
