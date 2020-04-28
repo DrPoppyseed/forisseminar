@@ -20,7 +20,7 @@
         font-size: 50%;
     }
     @include ss_414x896 {
-        font-size: 40%;
+        font-size: 50%;
     }
 }
 
@@ -109,7 +109,7 @@ html {
         color: white;
         background-color: #2D2C29;
         .page__header {
-            height: 100vh;
+            height: 100%;
             width: 100%;
             background-image: linear-gradient(rgba(34, 37, 37, 0.7), rgba(34, 37, 37, 0.7)), url('../img/bg_hero_01-new.jpg') ;
             background-repeat: no-repeat;
@@ -121,7 +121,7 @@ html {
                 font-family: $font-sans-serif;
                 background-color: black;
                 height: 4rem;
-                z-index: 9999;
+                z-index: 5;
                 position: fixed;
                 width: 100%;
                 
@@ -155,6 +155,94 @@ html {
                     .header_nav__item--top {
                         cursor: pointer;
                     }
+                    // .menuToggle {
+                    //     position: relative;
+                    //     -webkit-user-select: none;
+                    //     user-select: none;
+                    //     display: none;
+                    //     @include ss_414x896 {
+                    //         display: inline-block;
+                    //     }
+                    //     a {
+                    //         text-decoration: none;
+                    //         color: #232323;
+                    //         transition: color 0.3s ease;
+                    //         &:hover {
+                    //             color: tomato;
+                    //         }
+                    //     }
+                    //     input {
+                    //         display: block;
+                    //         width: 4rem;
+                    //         height: 100%;
+                    //         position: absolute;
+                    //         top: -7px;
+                    //         left: -5px;
+                            
+                    //         cursor: pointer;
+                            
+                    //         opacity: 0; /* hide this */
+                    //         z-index: 2; /* and place it over the hamburger */
+                            
+                    //         -webkit-touch-callout: none;
+                    //         &:checked ~ span {
+                    //             opacity: 1;
+                    //             transform: rotate(45deg) translate(-2px, -1px);
+                    //             background: #232323;
+                    //         }
+                    //         &:checked ~ span:nth-last-child(3) {
+                    //             opacity: 0;
+                    //             transform: rotate(0deg) scale(0.2, 0.2);
+                    //         }
+                    //         &:checked ~ span:nth-last-child(2) {
+                    //             transform: rotate(-45deg) translate(0, -1px);
+                    //         }
+                    //         &:checked ~ ul {
+                    //             transform: none;
+                    //         }
+                    //     }
+                    //     span {
+                    //         display: block;
+                    //         width: 2.5rem;
+                    //         height: 0.1rem;
+                    //         margin-bottom: 0.4rem;
+                    //         position: relative;
+                    //         background: whitesmoke;
+                    //         z-index: 1;
+                    //         transform-origin: 0.43rem 0;
+                            
+                    //         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    //         background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    //         opacity 0.55s ease;
+                    
+                    //         &:first-child {
+                    //             transform-origin: 0% 0%;
+                    //         }
+                    //         &:nth-last-child(2) {
+                    //             transform-origin: 0% 510%;
+                    //         }
+                    //     }
+                    //     .menu {
+                    //         position: absolute;
+                    //         width: 100%;
+                    //         margin: -100px 0 0 -50px;
+                    //         padding: 50px;
+                    //         padding-top: 125px;
+                            
+                    //         background: #ededed;
+                    //         list-style-type: none;
+                    //         -webkit-font-smoothing: antialiased;
+                            
+                    //         transform-origin: 0% 0%;
+                    //         transform: translate(100%, 0);
+                            
+                    //         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+                    //         li {
+                    //             padding: 10px 0;
+                    //             font-size: 22px;
+                    //         }
+                    //     }
+                    // }
                 }
                 .progress__container {
                     width: 100%;
