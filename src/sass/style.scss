@@ -7,12 +7,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    @include ss_1200--short {
+        font-size: 50%;
+    }
+    @include ss_962x601 {
+        font-size: 50%;
+    }
+    @include ss_800x1280 {
+        font-size: 50%;
+    }
+    @include ss_601x962 {
+        font-size: 50%;
+    }
+    @include ss_414x896 {
+        font-size: 40%;
+    }
 }
 
 .button {
     --offset: 5px;
     --border-size: 1px;
-    
     display: block;
     position: relative;
     padding: 1em 3em;
@@ -91,6 +105,7 @@
 
 html {
     body {
+        font-family: $font-serif;
         color: white;
         background-color: #2D2C29;
         .page__header {
@@ -159,6 +174,16 @@ html {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                @include ss_1200--short {
+                    align-items: flex-start;
+                }
+                @include ss_1200--tall {
+                    flex-direction: column;
+                    padding-top: 5%;
+                }
+                @include ss_800x1280 {
+                    padding-top: 10%;
+                }
                 .hero__imgbox {
                     .hero__img {
                         width: 90%;
@@ -177,17 +202,66 @@ html {
                             height: 450px;
                             width: 80%;
                         }
+                        @include ss_1200--short {
+                            display: inline-block;
+                            object-fit: cover;
+                            height: 300px;
+                            width: 85%;
+                        }
+                        @include ss_1200--tall {
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            height: 25vh;
+                            width: 80%;
+                            float: none;
+                        }
+                        @include ss_800x1280 {
+                            height: 40vh;
+                            object-fit: cover;
+                        }
+                        @include ss_768x1024 {
+                            height: 30vh;
+                        }
                     }
                 }
-
                 .hero__textbox {
                     font-size: 2rem;
                     display: flex;
                     flex-direction: column;
                     margin-left: 5rem;
+                    .hero__textbox_title_group {
+                        @include ss_1200--tall {
+                            display: flex;
+                            border-bottom: solid white 1px;
+                            margin-top: 2rem;
+                            .hero__textbox_title {
+                                font-size: 3rem;
+                            }
+                            .hero__textbox_collab {
+                                border-bottom: none;
+                                margin-top: auto;
+                                margin-bottom: 0px;
+                                margin-left: 3rem;
+                            }
+                        }
+                        @include ss_800x1280 {
+                            display: flex;
+                            flex-direction: column;
+                            .hero__textbox_title {
+                                font-size: 4rem;
+                            }
+                            .hero__textbox_collab {
+                                margin-left: 0rem;
+                            }
+                        }
+                    }
                     .hero__textbox_title {
                         font-size: 4rem;
                         align-self: flex-start;
+                        @include ss_1200--short {
+                            font-size: 3rem;
+                        }
                     }
                     .hero__textbox_collab {
                         align-self: flex-start;
@@ -197,33 +271,44 @@ html {
                         justify-content: center;
                         padding-right: 1rem;
                         border-bottom: 1px solid white;
+                        @include ss_1200--tall {
+                            padding-bottom: 0.5rem;
+                        }
                         .collab__node {
                             display: flex;
                             flex-direction: row;
-                            .collab__node_logo {
-                                height: 2.8rem;
-                            }
                             .collab__node_text {
                                 margin-left: 0.5rem;
                                 font-size: 1.9rem;
                                 font-weight: 400;
+                                @include ss_1200--tall {
+                                    font-size: 1.5rem;
+                                }
                             }
                         }
                         .collab__node--01 {
                             .collab__node_text--01 {
                                 font-family: $font-sans-serif;
                                 font-size: 1.7rem;
+                                @include ss_1200--tall {
+                                    font-size: 1.5rem;
+                                }
                             }
                             .collab__node_logo--01 {
                                 height: 2.8rem;
+                                @include ss_1200--tall {
+                                    height: 2.3rem;
+                                }
                             }
                         }
                         .collab__node--02 {
-                            padding-top: 0.3rem;
                             .collab__node_logo--02 {
                                 border-radius: 0.5rem;
                                 height: 2rem;
-
+                                margin-top: 0.2rem;
+                                @include ss_1200--short {
+                                    height: 1.6rem;
+                                }
                             }
                             .collab__node_text--02 {
                                 margin-left: 1rem;
@@ -233,6 +318,11 @@ html {
                             height: 3rem;
                             margin-right: 1rem;
                             margin-left: 1rem;
+                            @include ss_1200--tall {
+                                margin-right: 0.5rem;
+                                margin-left: 0.5rem;
+                                height: 2rem;
+                            }
                         }
                     }
                     .hero__textbox_text {
@@ -240,9 +330,24 @@ html {
                         line-height: 3rem;
                         font-size: 1.6rem;
                         padding: 15% 1rem 5rem 0;
+                        @include ss_1200--tall {
+                            padding-top: 3%;
+                            padding-bottom: 4%;
+                            align-self: center;
+                        }
+                        @include ss_800x1280 {
+                            padding-top: 15%;
+                            padding-bottom: 8%;
+                        }
                     }
                     .button--hero {
                         align-self: flex-start;
+                        @include ss_1200--tall {
+                            align-self: center;
+                        }
+                        @include ss_800x1280 {
+                            align-self: flex-start;
+                        }
                     }
                 }
                 .banner {
@@ -254,29 +359,73 @@ html {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-
+                    .banner__group {
+                        display: none;
+                    }
+                    @include ss_1200--tall {
+                        padding: 2rem;
+                    }
+                    @include ss_800x1280 {
+                        padding: 3rem 0;
+                    }
+                    @include ss_800x1280 {
+                        .banner__group {
+                            display: flex;
+                        }
+                    }
                     .banner__title {
                         font-size: 2rem;
                         margin-bottom: 2rem;
+                        @include ss_800x1280 {
+                            margin-bottom: 3rem;
+                        }
                     }
-
                     .banner__imgs {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-
                         .banner__img {
                             display: inline-block;
-                            height: 2rem;
                             padding: 0 2%;
+                            @include ss_800x1280 {
+                                display: none; 
+                            }
                         }
-
-                        .banner__img--02 { height: 4rem; }
-                        .banner__img--03 { height: 3rem; }
-                        .banner__img--04 { height: 2.5rem; }
-                        .banner__img--05 { height: 1.5rem; }
-                        .banner__img--06 { height: 2.5rem; }
-                        .banner__img--08 { height: 3.5rem; }
+                        @include ss_800x1280 {
+                            flex-direction: column;
+                            .banner__group {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                .banner__group_img:not(.banner__group_img--05):not(.banner__group_img--08) {
+                                    margin-right: 2rem;
+                                }
+                                &--top {
+                                    margin-bottom: 1rem;
+                                }
+                                &--bottom {
+                                    .banner__group_img--06 {
+                                        padding-top: 0.5rem;
+                                        height: 3rem;
+                                    }
+                                    .banner__group_img--07  { height: 2.5rem; }
+                                }
+                            }
+                        }
+                        .banner__img--01,
+                        .banner__group_img--01 { height: 2rem; }
+                        .banner__img--02,
+                        .banner__group_img--02 { height: 4rem; }
+                        .banner__img--03,
+                        .banner__group_img--03  { height: 3rem; }
+                        .banner__img--04,
+                        .banner__group_img--04  { height: 2.5rem; }
+                        .banner__img--05,
+                        .banner__group_img--05  { height: 1.5rem; }
+                        .banner__img--06,
+                        .banner__group_img--06  { height: 2.5rem; }
+                        .banner__img--08,
+                        .banner__group_img--08  { height: 3.5rem; }
                     }
                 }
             }
@@ -300,6 +449,9 @@ html {
                 .reasons_section__title {
                     font-size: 2rem;
                     margin-bottom: 1.5rem;
+                    @include ss_800x1280 {
+                        margin-bottom: 2rem;
+                    }
                 }
                 .list__components {
                     display: inline-block;
@@ -318,6 +470,15 @@ html {
                             text-align: center;
                             font-size: 1.6rem;
                             margin-left: 0;
+                            span {
+                                font-size: 1.6rem;
+                            }
+                            @include ss_800x1280 {
+                                width: 30rem;
+                                span {
+                                    display: block;
+                                }
+                            }
                         }
                         .list__component--01,
                         .list__component--03 {
@@ -334,35 +495,79 @@ html {
                 padding: 5rem 20rem;
                 display: flex;
                 flex-direction: column;
+                @include ss_1200--tall {
+                    padding: 5rem 10rem;
+                }
+                @include ss_962x601 {
+                    padding: 5rem 10rem;
+                }
+                @include ss_800x1280 {
+                    padding: 2rem 8rem;
+                }
                 .profile_section__title {
                     margin-bottom: 3rem;
                     align-self: flex-end;
                     font-size: 1.4rem;
+                    @include ss_800x1280 {
+                        margin-bottom: 0rem;
+                    }
                 }
                 .profile_section__content {
                     display: flex;
                     flex-direction: row;
+                    @include ss_800x1280 {
+                        flex-direction: column;
+                    }
                     .profile_section__teacher-pic {
                         align-self: center;
                         height: 35rem;
+                        @include ss_800x1280 {
+                            display: none;
+                        }
+                    }
+                    .profile_section__teacher-pic--02 {
+                        display: none;
+                        @include ss_800x1280 {
+                            display: block;
+                            height: 20rem;
+                            width: auto;
+                            align-self: center;
+                        }
                     }
                     .profile_section__textbox {
                         margin-left: 5rem;
                         margin-top: 2rem;
+                        @include ss_800x1280 {
+                            margin-top: 2rem;
+                            margin-bottom: 3rem;
+                            align-self: center;
+                            margin-left: 0;
+                        }
                         .profile_section__headerbox {
                             .profile_section__header--01 {
                                 display: flex;
                                 border-bottom: 1px solid white;
+                                @include ss_800x1280 {
+                                    flex-direction: column;
+                                }
                                 .profile_section__header-title {
                                     font-size: 3rem;
                                     display: inline-block;
                                     align-self: flex-end;
+                                    @include ss_800x1280 {
+                                        font-size: 2.5rem;
+                                        align-self: flex-start;
+                                    }
                                 }
                                 .profile_section__header-company {
                                     display: flex;
                                     flex-direction: row;
                                     margin-left: 10rem;
                                     padding-bottom: 0.6rem;;
+                                    @include ss_800x1280 {
+                                        margin-left: 0rem;
+                                        align-self: flex-start;
+                                    }
                                     img {
                                         border-radius: 0.5rem;
                                         height: 2rem; 
@@ -398,6 +603,15 @@ html {
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
+                @include ss_1200--tall {
+                    padding: 0 2%;
+                }
+                @include ss_962x601 {
+                    padding: 0 2%;
+                }
+                @include ss_800x1280 {
+                    padding: 3rem 5%;
+                }
                 .content_section__itemboxes {
                     display: flex;
                     flex-direction: column;
@@ -405,6 +619,10 @@ html {
                     background-color: rgba(34, 37, 37, 0.6);
                     padding: 3rem;
                     padding-top: 5rem;
+                    @include ss_800x1280 {
+                        padding: 2rem 5rem;
+                        padding-bottom: 5rem;
+                    }
                     .content_section__title {
                         align-self: flex-end;
                         font-size: 1.4rem;
@@ -413,12 +631,37 @@ html {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
+                        @include ss_800x1280 {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            padding-left: 2rem;
+                            border-left: solid 1px white;
+                        }
                         .class_name_box {
                             padding: 2rem;
+                            border-right: 1px solid white;
+                            @include ss_1200--tall {
+                                padding-left: 1rem;
+                            }
+                            @include ss_962x601 {
+                                padding-left: 1rem;
+                            }
+                            @include ss_800x1280 {
+                                border-right: none;
+                                padding-bottom: 0.5rem;
+                                padding-left: 1rem;
+                                margin-bottom: 0;
+                                .class_name_text {
+                                    text-align: left;
+                                }
+                            }
                             .access {
                                 display: flex;
                                 align-items: center;
                                 justify-content: flex-end;
+                                @include ss_800x1280 {
+                                    justify-content: flex-start;
+                                }
                                 .access__icon {
                                     height: 1.5rem;
                                     margin-left: 0.5rem;
@@ -438,15 +681,27 @@ html {
                                 span {
                                     display: block;
                                     font-size: 1.6rem;
-                                    white-space: nowrap;
                                     text-align: right;
+                                    @include ss_800x1280 {
+                                        text-align: left;
+                                        display: inline-block;
+                                    }
                                 }
                             }
-                            border-right: 1px solid white;
                         }
                         .class_detail_box {
                             padding-top: 1.5rem;
                             padding-right: 5rem;
+                            @include ss_1200--tall {
+                                padding-right: 2rem;
+                            }
+                            @include ss_962x601 {
+                                padding-right: 2rem;
+                            }
+                            @include ss_800x1280 {
+                                padding-top: 0rem;
+                                padding-left: 1rem;
+                            }
                             .class_detail_text {
                                 font-size: 1.4rem;
                                 
@@ -459,7 +714,9 @@ html {
                 padding: 3rem 15%;
                 display: flex;
                 flex-direction: column;
-                // font-family: $font-sans-serif;
+                @include ss_601x962 {
+                    padding-right: 10%;
+                }
                 .steps_section__title {
                     font-size: 1.4rem;
                     align-self: flex-end;
@@ -490,6 +747,10 @@ html {
                     .steps__step_detail {
                         transition: 0.5s ease;
                         padding: 10%;
+                        @include ss_601x962 {
+                            padding: 5%;
+                            padding-top: 20%;
+                        }
                         .steps__step_detail--title {
                             h3 {
                                 font-size: 1.6rem;
@@ -512,6 +773,12 @@ html {
                 padding: 5rem 15%;
                 display: flex;
                 flex-direction: column;
+                @include ss_800x1280 {
+                    padding: 0 5%;
+                    .deadline_section__title {
+                        margin-right: 5%;
+                    }
+                }
                 .deadline_section__title {
                     align-self: flex-end;
                     font-size: 1.4rem;
@@ -538,6 +805,21 @@ html {
                         .deadline_box__deadline_date {
                             font-size: 1.6rem;
                             font-weight: 600;
+                            .deadline_date__span {
+                                font-size: 1.6rem;
+                            }
+                            @include ss_962x601 {
+                                display: block;
+                            }
+                            @include ss_800x1280 {
+                                display: block;
+                            }
+                            @include ss_601x962 {
+                                display: block;
+                                .deadline_date__span {
+                                    display: block;
+                                }
+                            }
                         }
                     }
                     .deadline_box--01 {
@@ -555,20 +837,32 @@ html {
                 padding: 5rem 15%;
                 display: flex; 
                 flex-direction: column;
+                @include ss_962x601 {
+                    padding: 5rem 10%;
+                }
+                @include ss_800x1280 {
+                    padding: 5rem 10%;
+                }
                 .plans_section__title {
                     align-self: flex-end;
                     font-size: 1.4rem;
                     margin-bottom: 2rem;
                 }
                 .plans_section__plan_boxes {
-                    // padding: 3rem 10rem;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-around;
+                    @include ss_601x962 {
+                        flex-direction: column;
+                        justify-content: space-around;
+                    }
                     .plan_box {
                         background-color: rgba(#DDDDDD, 1);
                         color: black;
                         cursor: pointer;
+                        @include ss_601x962 {
+                            margin-bottom: 2rem;
+                        }
                         &:before,
                         &:after {
                             content: "";
@@ -599,6 +893,10 @@ html {
                             display: flex;
                             align-items: center;
                             margin-bottom: 1.5rem;
+                            @include ss_601x962 {
+                                justify-content: center;
+                                padding: 2rem 0 0 0;
+                            }
                             .plan_box__plan_icon {
                                 height: 2rem;
                                 margin-right: 1rem;
@@ -616,33 +914,50 @@ html {
                                 font-size: 1rem;
                             }
                         }
-                        .plan_box__features {
-                            z-index: 9999;
-                            padding-top: 1rem;
-                            padding: 2rem;
-                            margin-bottom: 10rem;
-                            .plan_box__feature {
+                        .plan_box--bottom-half {
+                            @include ss_601x962 {
                                 display: flex;
+                                flex-direction: row;
                                 align-items: center;
-                                margin-bottom: 0.5rem;
-                                .plan_box__feature_img {
-                                    height: 1.5rem;
-                                    margin-right: 1rem;
+                            }
+                            .plan_box__features {
+                                padding-top: 1rem;
+                                padding: 2rem;
+                                margin-bottom: 10rem;
+                                @include ss_601x962 {
+                                    flex: 1;
+                                    margin-bottom: 0rem;
                                 }
-                                .plan_box__feature_text {
-                                    font-size: 1.4rem;
+                                .plan_box__feature {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-bottom: 0.5rem;
+                                    .plan_box__feature_img {
+                                        height: 1.5rem;
+                                        margin-right: 1rem;
+                                    }
+                                    .plan_box__feature_text {
+                                        font-size: 1.4rem;
+                                    }
                                 }
                             }
-                        }
-                        .button--plans {
-                            color: black;
-                            position: absolute;
-                            bottom: 0;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            font-size: 1.2rem;
-                            padding: 1.5rem 3rem;
-                            z-index: 2;
+                            .button--plans {
+                                color: black;
+                                position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 1.2rem;
+                                padding: 1.5rem 3rem;
+                                z-index: 2;
+                                @include ss_601x962 {
+                                    position: static;
+                                    left: 0;
+                                    margin-top: auto;
+                                    margin-bottom: auto;
+                                    z-index: 3;
+                                }
+                            }
                         }
                     }
                     .plan_box--basic {

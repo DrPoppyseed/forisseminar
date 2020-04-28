@@ -32,27 +32,71 @@ $(document).ready(() => {
 
 $(document).ready(() => {
     var $windowWidth = $(window).width();
+    var $windowHeight = $(window).height();
     if ($windowWidth > 1500) {
         $('.hero__imgbox').removeClass('span-1-of-2');
         $('.hero__imgbox').addClass('span-3-of-5');
         $('.hero__textbox').removeClass('span-1-of-2');
         $('.hero__textbox').addClass('span-2-of-5');
+    } else if ($windowWidth <= 1200 && $windowHeight > 650) {
+        $('.hero__imgbox').removeClass('span-1-of-2');
+        $('.hero__textbox').removeClass('span-1-of-2');
+        $('.hero__imgbox').removeClass('span-3-of-5');
+        $('.hero__textbox').removeClass('span-2-of-5');
     }
-
     $(window).on('resize', () => {
         $windowWidth = $(window).width();
+        $windowHeight = $(window).height();
         if ($windowWidth > 1500) {
             $('.hero__imgbox').removeClass('span-1-of-2');
             $('.hero__imgbox').addClass('span-3-of-5');
             $('.hero__textbox').removeClass('span-1-of-2');
             $('.hero__textbox').addClass('span-2-of-5');
         } else if ($windowWidth <= 1500) {
-            $('.hero__imgbox').removeClass('span-3-of-5');
-            $('.hero__imgbox').addClass('span-1-of-2');
-            $('.hero__textbox').removeClass('span-2-of-5');
-            $('.hero__textbox').addClass('span-1-of-2');
+            if ($windowWidth <= 1200 && $windowHeight > 650) {
+                $('.hero__imgbox').removeClass('span-1-of-2');
+                $('.hero__textbox').removeClass('span-1-of-2');
+                $('.hero__imgbox').removeClass('span-3-of-5');
+                $('.hero__textbox').removeClass('span-2-of-5');
+            } else {
+                $('.hero__imgbox').removeClass('span-3-of-5');
+                $('.hero__imgbox').addClass('span-1-of-2');
+                $('.hero__textbox').removeClass('span-2-of-5');
+                $('.hero__textbox').addClass('span-1-of-2');
+            }
         }
     });
+});
+
+$(document).ready(() => {
+    var $windowWidth = $(window).width();
+    var $windowHeight = $(window).height();
+    if ($windowWidth <= 601 && $windowHeight <= 962) {
+        $('.class_name_box').removeClass('span-1-of-3');
+        $('.class_detail_box').removeClass('span-2-of-3');
+        // $('.plan_box__features').addClass('col span-1-of-2');
+        // $('.button--plans').addClass('col span-1-of-2');
+    } else if ($windowWidth <= 800 && $windowHeight <= 1280) {
+        $('.class_name_box').removeClass('span-1-of-3');
+        $('.class_detail_box').removeClass('span-2-of-3');
+    } 
+
+    
+    // onResize($windowWidth, $windowHeight);
+    // $(window).on('resize', () => {
+    //     $windowWidth = $(window).width();
+    //     $windowHeight = $(window).height();
+    //     onResize($windowWidth, $windowHeight);
+    // })
+
+    // var onResize = ($windowW, $windowH) => {
+    //     if ($windowW <= 800 && $windowH <= 1280) {
+    //         $('.class_name_box').removeClass('span-1-of-3');
+    //         $('.class_detail_box').removeClass('span-2-of-3');
+    //     } else {
+    //         return;
+    //     }
+    // }
 });
 
 $(document).ready(function() {
@@ -80,14 +124,14 @@ $(document).ready(function() {
         slideIndex = jQuery(slide).index();
 
         if (slideIndex == 0) {
-            $('.steps__step_detail--title').html(`<h3>プランご購入</h3>`);
-            $('.steps__step_detail--text').html(`<p>自分にあったプランを選び、購入手続き画面に進んだのち、必要事項の記入・手続きの提出をオンラインでしていただきます。</p>`);
+            $('.steps__step_detail--title').html(`<h3>自分に合ったプランの選択</h3>`);
+            $('.steps__step_detail--text').html(`<p>自分にあったプランを選んでいただきます。</p>`);
         } else if (slideIndex == 1) {
             $('.steps__step_detail--title').html(`<h3>お支払い</h3>`);
-            $('.steps__step_detail--text').html(`<p>選択したプランの料金を、購入手続き画面にてお支払いしていただきます。</p>`);
+            $('.steps__step_detail--text').html(`<p>選択したプランの料金を、銀行振込にて、お支払いください。銀行振り込みの手順に関しましては、こちらから送付させていただきます。</p>`);
         } else if (slideIndex == 2) {
             $('.steps__step_detail--title').html(`<h3>セミナーで使用するテキストの購入（プレミアムプランご購入の方はテキストが付属です）</h3>`);
-            $('.steps__step_detail--text').html(`<p>FORIS専用のNoteアカウントにアクセスしていただいたのち、セミナーに必要なテキストを購入していただきます。ただし、プレミアムプランのご購入の方はプラン特典として、テキストのアクセス権が付属してきます。</p>`);
+            $('.steps__step_detail--text').html(`<p>FORIS専用のNoteアカウントにアクセスしていただいたのち、セミナーに必要なテキストを購入していただきます。ただし、プレミアムプランをご購入の方はプラン特典として、テキストが無料で送付させていただきます。</p>`);
         } else if (slideIndex == 3) {
             $('.steps__step_detail--title').html(`<h3>お客様とのセミナー日程調整</h3>`);
             $('.steps__step_detail--text').html(`<p>講師とのマンツーマン授業となりますので、お客様がお選びになった学期内で、お客様と講師の都合が着く日程を調整していただきます。</p>`);
@@ -99,12 +143,10 @@ $(document).ready(function() {
             $('.steps__step_detail--text').html(`<p>お客様のお選びになった日程に沿って、カリキュラムを進めていきます。</p>`);
         } else if (slideIndex == 6) {
             $('.steps__step_detail--title').html(`<h3>セミナー全て終了後、質疑応答ができるオンラインサロンへのご招待</h3>`);
-            $('.steps__step_detail--text').html(`<p>セミナー終了後、セミナー後に上がった質疑の応答や、同じセミナーを受けた仲間と混じり合えるオンラインサロンへご招待させていただきます。また、お客様のES添削や面接着の個別アドバイスなど、サポートをさせていただきます。</p>`);
+            $('.steps__step_detail--text').html(`<p>セミナー終了後、セミナー後に上がった質疑の応答や、同じセミナーを受けた仲間と混じり合えるオンラインサロンへご招待させていただきます。</p>`);
         }
     }
 
-    // function fillBar()
-    
     function animate() {
         return setInterval(function() {
             var slide = slides[slideIndex];
