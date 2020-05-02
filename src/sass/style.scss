@@ -24,9 +24,16 @@
     }
 }
 
+.owl-stage {
+    display: flex;
+    align-items: center;
+    margin: 10;
+}
+
 .button {
     --offset: 5px;
     --border-size: 1px;
+    white-space: nowrap;
     display: block;
     position: relative;
     padding: 1em 3em;
@@ -104,10 +111,12 @@
 }
 
 html {
+    height: 100%;
     body {
         font-family: $font-serif;
         color: white;
         background-color: #2D2C29;
+        height: 100%;
         .page__header {
             height: 100%;
             width: 100%;
@@ -272,7 +281,11 @@ html {
                 @include ss_800x1280 {
                     padding-top: 10%;
                 }
+                @include ss_414x896 {
+                    padding-top: 0%;
+                }
                 .hero__imgbox {
+                    height: 100%;
                     .hero__img {
                         width: 90%;
                         height: auto;
@@ -311,6 +324,18 @@ html {
                         @include ss_768x1024 {
                             height: 30vh;
                         }
+                        @include ss_414x896 {
+                            width: 100%;
+                            justify-self: flex-start;
+                            height: 30vh;
+                            object-fit: cover;
+                        }
+                        @include ss_375x812 {
+                            height: 25vh;
+                        }
+                        @include ss_414x736 {
+                            display: none;
+                        }
                     }
                 }
                 .hero__textbox {
@@ -318,6 +343,14 @@ html {
                     display: flex;
                     flex-direction: column;
                     margin-left: 5rem;
+                    @include ss_414x896 {
+                        margin-left: 0;
+                        padding: 0 3rem;
+                    }
+                    @include ss_414x736 {
+                        padding-top: 10rem;
+                        margin-left: 1rem;
+                    }
                     .hero__textbox_title_group {
                         @include ss_1200--tall {
                             display: flex;
@@ -350,6 +383,12 @@ html {
                         @include ss_1200--short {
                             font-size: 3rem;
                         }
+                        @include ss_414x896 {
+                            font-size: 2.5rem;
+                        }
+                        @include ss_375x812 {
+                            font-size: 2rem;
+                        }
                     }
                     .hero__textbox_collab {
                         align-self: flex-start;
@@ -362,9 +401,18 @@ html {
                         @include ss_1200--tall {
                             padding-bottom: 0.5rem;
                         }
+                        @include ss_414x896 {
+                            padding-right: 0rem;
+                        }
+                        @include ss_414x736 {
+                            padding-right: 2rem;
+                        }
                         .collab__node {
                             display: flex;
                             flex-direction: row;
+                            @include ss_414x736 {
+                                align-items: center;
+                            }
                             .collab__node_text {
                                 margin-left: 0.5rem;
                                 font-size: 1.9rem;
@@ -381,11 +429,17 @@ html {
                                 @include ss_1200--tall {
                                     font-size: 1.5rem;
                                 }
+                                @include ss_414x736 {
+                                    font-size: 1.3rem;
+                                }
                             }
                             .collab__node_logo--01 {
                                 height: 2.8rem;
                                 @include ss_1200--tall {
                                     height: 2.3rem;
+                                }
+                                @include ss_414x736 {
+                                    height: 2rem;
                                 }
                             }
                         }
@@ -397,9 +451,20 @@ html {
                                 @include ss_1200--short {
                                     height: 1.6rem;
                                 }
+                                @include ss_414x736 {
+                                    height: 1.4rem;
+                                    margin-top: 0rem;
+                                    border-radius: 0.2rem;
+                                }
                             }
                             .collab__node_text--02 {
                                 margin-left: 1rem;
+                                @include ss_414x736 {
+                                    font-size: 1.3rem;
+                                }
+                                @include ss_414x736 {
+                                    margin-top: 0.1rem;
+                                }
                             }
                         }
                         .collab__multiply_icon {
@@ -410,6 +475,9 @@ html {
                                 margin-right: 0.5rem;
                                 margin-left: 0.5rem;
                                 height: 2rem;
+                            }
+                            @include ss_414x736 {
+                                height: 1.8rem;
                             }
                         }
                     }
@@ -424,8 +492,12 @@ html {
                             align-self: center;
                         }
                         @include ss_800x1280 {
-                            padding-top: 15%;
-                            padding-bottom: 8%;
+                            padding-top: 10%;
+                            padding-bottom: 5%;
+                        }
+                        @include ss_375x812 {
+                            line-height: 2.5rem;
+                            padding-bottom: 6%;
                         }
                     }
                     .button--hero {
@@ -447,6 +519,30 @@ html {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    // .banner_carousel {
+                    //     display: none;
+                    //     @include ss_414x896 {
+                    //         display: flex;
+                    //         flex-direction: row;
+                    //         align-items: center;
+                    //         .img__container {
+                    //             display: flex;
+                    //             justify-content: center;
+                    //             align-items: center;
+                    //             margin-right: 2rem;
+                    //             width: 20%;
+                    //         }
+                    //         .img__container--08 { margin-right: 0; }
+                    //         .carousel__img--01 { height: 1.5rem; }
+                    //         .carousel__img--02 { height: 2rem; }
+                    //         .carousel__img--03 { height: 2rem; }
+                    //         .carousel__img--04 { height: 2rem; }
+                    //         .carousel__img--05 { height: 1rem; }
+                    //         .carousel__img--06 { height: 1.5rem }
+                    //         .carousel__img--07 { height: 2rem; }
+                    //         .carousel__img--08 { height: 2rem; }
+                    //     }
+                    // }
                     .banner__group {
                         display: none;
                     }
@@ -454,7 +550,7 @@ html {
                         padding: 2rem;
                     }
                     @include ss_800x1280 {
-                        padding: 3rem 0;
+                        padding: 1.5rem 0;
                     }
                     @include ss_800x1280 {
                         .banner__group {
@@ -462,11 +558,8 @@ html {
                         }
                     }
                     .banner__title {
-                        font-size: 2rem;
-                        margin-bottom: 2rem;
-                        @include ss_800x1280 {
-                            margin-bottom: 3rem;
-                        }
+                        font-size: 1.6rem;
+                        margin-bottom: 1rem;
                     }
                     .banner__imgs {
                         display: flex;
@@ -489,14 +582,14 @@ html {
                                     margin-right: 2rem;
                                 }
                                 &--top {
-                                    margin-bottom: 1rem;
+                                    margin-bottom: 0.5rem;
                                 }
                                 &--bottom {
                                     .banner__group_img--06 {
                                         padding-top: 0.5rem;
                                         height: 3rem;
                                     }
-                                    .banner__group_img--07  { height: 2.5rem; }
+                                    .banner__group_img--07  { height: 2rem; }
                                 }
                             }
                         }
@@ -514,6 +607,51 @@ html {
                         .banner__group_img--06  { height: 2.5rem; }
                         .banner__img--08,
                         .banner__group_img--08  { height: 3.5rem; }
+                        // @include ss_414x896 {
+                        //     .banner__img--01 { height: 1.5rem; }
+                        //     .banner__img--04 { height: 2rem; }
+                        //     .banner__img--05 { height: 1.5rem; }
+                        //     .banner__img--07 { height: 2rem; }
+                        //     .banner__img--08 { height: 2rem; }
+                        // }
+                        @include ss_414x896 {
+                            .banner__img {
+                                display: none;
+                            }
+
+                            .banner__group {
+                                .banner__group_img {
+                                    margin-right: 1.5rem;
+                                }
+                                .banner__group_img--01 { height: 1.5rem; }
+                                .banner__group_img--05 { display: none; }
+                                .banner__group_img--07 { height: 2rem; }
+                                .banner__group_img--08 { height: 2rem; }
+                                .banner__group_img--04 { 
+                                    height: 2rem;
+                                    margin-right: 0rem !important;
+                                }
+                            }
+                        }
+                        @include ss_375x812 {
+                            .banner__group {
+
+                                .banner__group_img--05,
+                                .banner__group_img--06,
+                                .banner__group_img--07,
+                                .banner__group_img--08 {
+                                    display: none;
+                                }
+                            }
+                        }
+                        // @include ss_414x896 {
+                        //     .banner__img {
+                        //         display: none;
+                        //     }
+                        //     .banner__group {
+                        //         display: none;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -547,7 +685,12 @@ html {
                     .list__components_row {
                         display: flex;
                         flex: 1;
-
+                        @include ss_414x896 {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                        }
                         .list__component {
                             padding: 2rem 0rem;
                             width: 50rem;
@@ -576,6 +719,20 @@ html {
                         .list__component--04 {
                             margin-left: 3%;
                         }
+                        @include ss_414x896 {
+                            .list__component--01,
+                            .list__component--02,
+                            .list__component--03,
+                            .list__component--04 {
+                                margin-left: 0;
+                                margin-right: 0;
+                                margin-bottom: 1rem;
+                                width: 80vw;
+                                span {
+                                    display: inline-block;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -591,6 +748,9 @@ html {
                 }
                 @include ss_800x1280 {
                     padding: 2rem 8rem;
+                }
+                @include ss_414x896 {
+                    padding: 2rem 5rem;
                 }
                 .profile_section__title {
                     margin-bottom: 3rem;
@@ -620,6 +780,9 @@ html {
                             height: 20rem;
                             width: auto;
                             align-self: center;
+                        }
+                        @include ss_414x896 {
+                            height: 15rem;
                         }
                     }
                     .profile_section__textbox {
@@ -700,6 +863,9 @@ html {
                 @include ss_800x1280 {
                     padding: 3rem 5%;
                 }
+                @include ss_414x896 {
+                    padding: 2rem 3%;
+                }
                 .content_section__itemboxes {
                     display: flex;
                     flex-direction: column;
@@ -710,6 +876,10 @@ html {
                     @include ss_800x1280 {
                         padding: 2rem 5rem;
                         padding-bottom: 5rem;
+                    }
+                    @include ss_414x896 {
+                        padding: 2rem 3rem;
+                        padding-bottom: 4rem;
                     }
                     .content_section__title {
                         align-self: flex-end;
@@ -743,6 +913,9 @@ html {
                                     text-align: left;
                                 }
                             }
+                            @include ss_414x896 {
+                                padding-left: 0.5rem;
+                            }
                             .access {
                                 display: flex;
                                 align-items: center;
@@ -775,6 +948,9 @@ html {
                                         display: inline-block;
                                     }
                                 }
+                                @include ss_414x896 {
+                                    text-align: left;
+                                }
                             }
                         }
                         .class_detail_box {
@@ -790,9 +966,16 @@ html {
                                 padding-top: 0rem;
                                 padding-left: 1rem;
                             }
+                            @include ss_414x896 {
+                                padding-right: 0rem;
+                                padding-left: 0.5rem;
+                                p {
+                                    font-family: $font-sans-serif;
+                                    font-weight: 300;
+                                }
+                            }
                             .class_detail_text {
                                 font-size: 1.4rem;
-                                
                             }
                         }
                     }
@@ -811,6 +994,10 @@ html {
                     margin-bottom: 1rem;
                 }
                 .steps_section__content {
+                    @include ss_414x896 {
+                        display: flex;
+                        flex-direction: column;
+                    }
                     .steps__step_titles {
                         .steps_titles {
                             li { 
@@ -822,6 +1009,9 @@ html {
                                     background-color: rgba(#5A5959, 0.2);
                                     border-radius: 0.5rem;
                                 }
+                            }
+                            @include ss_414x896 {
+                                margin-bottom: 0.5rem;
                             }
                             li.current {
                                 transition: 0.5s ease;
@@ -839,11 +1029,17 @@ html {
                             padding: 5%;
                             padding-top: 20%;
                         }
+                        @include ss_414x896 {
+                            padding-top: 10%;
+                        }
                         .steps__step_detail--title {
                             h3 {
                                 font-size: 1.6rem;
                                 margin-bottom: 3rem;
                                 line-height: 2.4rem;
+                            }
+                            @include ss_414x896 {
+                                margin-bottom: 1rem;
                             }
                         }
                         .steps__step_detail--text {
@@ -877,11 +1073,17 @@ html {
                     flex-direction: row;
                     align-items: center;
                     justify-content: center;
+                    @include ss_414x896 {
+                        flex-direction: column;
+                    }
                     .deadline_box {
                         width: 30%;
                         background-position: center;
                         background-size: cover;
                         background-repeat: no-repeat;
+                        @include ss_414x896 {
+                            width: 100%;
+                        }
                         p {
                             padding: 1rem;
                             background-color: rgba(34, 37, 37, 0.6);
@@ -889,6 +1091,9 @@ html {
                         .deadline_box__season {
                             font-size: 1.4rem;
                             margin-bottom: 10rem;
+                            @include ss_414x896 {
+                                margin-bottom: 5rem;
+                            }
                         }
                         .deadline_box__deadline_date {
                             font-size: 1.6rem;
@@ -906,6 +1111,11 @@ html {
                                 display: block;
                                 .deadline_date__span {
                                     display: block;
+                                }
+                            }
+                            @include ss_414x896 {
+                                .deadline_date__span {
+                                    display: inline-block;
                                 }
                             }
                         }
@@ -944,12 +1154,25 @@ html {
                         flex-direction: column;
                         justify-content: space-around;
                     }
+                    @include ss_414x896 {
+                        flex-direction: row;
+                    }
                     .plan_box {
                         background-color: rgba(#DDDDDD, 1);
                         color: black;
                         cursor: pointer;
                         @include ss_601x962 {
                             margin-bottom: 2rem;
+                        }
+                        @include ss_414x896 {
+                            margin-right: 3rem;
+                            margin-left: 3rem;
+                            height: 45rem;
+                            border-radius: 1rem;
+                            &:before,
+                            &:after {
+                                display: none;
+                            }
                         }
                         &:before,
                         &:after {
@@ -981,16 +1204,16 @@ html {
                             display: flex;
                             align-items: center;
                             margin-bottom: 1.5rem;
-                            @include ss_601x962 {
-                                justify-content: center;
-                                padding: 2rem 0 0 0;
-                            }
                             .plan_box__plan_icon {
                                 height: 2rem;
                                 margin-right: 1rem;
                             }
                             .plan_box__title {
                                 font-size: 1.6rem;
+                            }
+                            @include ss_601x962 {
+                                justify-content: center;
+                                padding: 2rem 0 0 0;
                             }
                         }
                         .plan_box__price {
@@ -1008,6 +1231,9 @@ html {
                                 flex-direction: row;
                                 align-items: center;
                             }
+                            @include ss_414x896 {
+                                flex-direction: column;
+                            }
                             .plan_box__features {
                                 padding-top: 1rem;
                                 padding: 2rem;
@@ -1015,6 +1241,9 @@ html {
                                 @include ss_601x962 {
                                     flex: 1;
                                     margin-bottom: 0rem;
+                                }
+                                @include ss_414x896 {
+                                    padding-top: 3rem;
                                 }
                                 .plan_box__feature {
                                     display: flex;
@@ -1038,12 +1267,21 @@ html {
                                 font-size: 1.2rem;
                                 padding: 1.5rem 3rem;
                                 z-index: 2;
+                                @include ss_800x1280 {
+                                    padding: 1rem 2rem;
+                                    font-size: 1rem;
+                                }
                                 @include ss_601x962 {
                                     position: static;
                                     left: 0;
                                     margin-top: auto;
                                     margin-bottom: auto;
                                     z-index: 3;
+                                }
+                                @include ss_414x896 {
+                                    position: absolute;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
                                 }
                             }
                         }
@@ -1094,6 +1332,9 @@ html {
             display: flex;
             flex-direction: column;
             padding: 3rem 10%;
+            @include ss_414x896 {
+                padding-left: 15%;
+            }
             .footer__logo {
                 align-self: center;
                 margin-bottom: 5rem;
@@ -1107,12 +1348,17 @@ html {
                         font-size: 0.7rem;
                     }
                 }
+                @include ss_414x896 {
+                    align-self: flex-start;
+                }
             }
             .footer__section--middle {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
-                // padding: 0 10%;
+                @include ss_414x896 {
+                    flex-direction: column;
+                }
                 .footer__feature {
                     .footer__feature_title {
                         font-size: 1.4rem;

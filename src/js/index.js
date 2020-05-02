@@ -33,17 +33,22 @@ $(document).ready(() => {
 $(document).ready(() => {
     var $windowWidth = $(window).width();
     var $windowHeight = $(window).height();
-    if ($windowWidth > 1500) {
+    if ($windowWidth <= 450 && $windowHeight <= 900) {
         $('.hero__imgbox').removeClass('span-1-of-2');
-        $('.hero__imgbox').addClass('span-3-of-5');
         $('.hero__textbox').removeClass('span-1-of-2');
-        $('.hero__textbox').addClass('span-2-of-5');
+        $('.hero__imgbox').removeClass('span-3-of-5');
+        $('.hero__textbox').removeClass('span-2-of-5');
     } else if ($windowWidth <= 1200 && $windowHeight > 650) {
         $('.hero__imgbox').removeClass('span-1-of-2');
         $('.hero__textbox').removeClass('span-1-of-2');
         $('.hero__imgbox').removeClass('span-3-of-5');
         $('.hero__textbox').removeClass('span-2-of-5');
-    }
+    } else if ($windowWidth > 1500) {
+        $('.hero__imgbox').removeClass('span-1-of-2');
+        $('.hero__imgbox').addClass('span-3-of-5');
+        $('.hero__textbox').removeClass('span-1-of-2');
+        $('.hero__textbox').addClass('span-2-of-5');
+    } 
     $(window).on('resize', () => {
         $windowWidth = $(window).width();
         $windowHeight = $(window).height();
@@ -54,6 +59,11 @@ $(document).ready(() => {
             $('.hero__textbox').addClass('span-2-of-5');
         } else if ($windowWidth <= 1500) {
             if ($windowWidth <= 1200 && $windowHeight > 650) {
+                $('.hero__imgbox').removeClass('span-1-of-2');
+                $('.hero__textbox').removeClass('span-1-of-2');
+                $('.hero__imgbox').removeClass('span-3-of-5');
+                $('.hero__textbox').removeClass('span-2-of-5');
+            } else if ($windowWidth <= 450 && $windowHeight <= 900) {
                 $('.hero__imgbox').removeClass('span-1-of-2');
                 $('.hero__textbox').removeClass('span-1-of-2');
                 $('.hero__imgbox').removeClass('span-3-of-5');
@@ -71,7 +81,35 @@ $(document).ready(() => {
 $(document).ready(() => {
     var $windowWidth = $(window).width();
     var $windowHeight = $(window).height();
-    if ($windowWidth <= 601 && $windowHeight <= 962) {
+    if ($windowWidth <= 450) {
+        $('.class_name_box').removeClass('span-1-of-3');
+        $('.class_detail_box').removeClass('span-2-of-3');
+        $('.list__component').removeClass('span-1-of-2');
+        // $('.banner_carousel').slick({
+        //     slidesToShow: 3,
+        //     // variableWidth: true,
+        //     autoplay: true,
+        //     infinite: true,
+        //     // autoplaySpeed: 1500,
+        //     dots: false,
+        //     prevArrow: false,
+        //     nextArrow: false
+        // })
+        $('.plans_section__plan_boxes').slick({
+            autoplay: true,
+            autoplaySpeed: 1500,
+            dots: false,
+            prevArrow: false,
+            nextArrow: false
+        })
+        $(".class_name_box").click(function () {
+            $header = $(this);
+            //getting the next element
+            $content = $('.class_detail_box');
+            //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+            $content.slideToggle(500);
+        });
+    } else if ($windowWidth <= 601 && $windowHeight <= 962) {
         $('.class_name_box').removeClass('span-1-of-3');
         $('.class_detail_box').removeClass('span-2-of-3');
         // $('.plan_box__features').addClass('col span-1-of-2');
