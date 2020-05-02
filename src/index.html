@@ -19,6 +19,9 @@
     <link rel="subresource" href='./img/bg_reasons_01.jpg'>
     <link rel="subresource" href='./css/style.css'>
     <link rel="subresource" href='./assets/jquery.waypoints.min.js'>
+    <link rel='subresource' href='./assets/slick-theme.css'>
+    <link rel='subresource' href='./assets/slick.css'>
+    <link rel='subresource' href='./assets/slick.min.js'>
     <link rel="subresource" href='./js/bundle.js'>
     <link rel="prefetch" href='./css/grid.css'>
     <link rel="prefetch" href='./img/pic_teacher.png'>
@@ -58,7 +61,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel='stylesheet' type='text/css' href='./assets/slick-theme.css'>
+    <link rel='stylesheet' type='text/css' href='./assets/slick.css'>
     <link rel='stylesheet' type='text/css' href='./css/grid.css'>
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
     <title>Foris seminar</title>
@@ -425,125 +429,127 @@
         </section><!-- deadline_section -->
         <section class='plans_section'>
             <h2 class='plans_section__title'>プラン別料金</h2>
-            <div class='plans_section__plan_boxes'>
-                <div class='plans_section__plan_box plan_box plan_box--basic'>
-                    <header class='plan_box__header'>
-                        <img class='plan_box__plan_icon plan_box__plan_icon--basic' src='./img/ico_plans_01--no.svg' alt='icon plan basic'>
-                        <h3 class='plan_box__title'>ベーシック・プラン</h3>
-                    </header>
-                    <p class='plan_box__price'>75,000<span>円（税抜き）</span></p>
-                    <div class='plan_box--bottom-half'>
-                        <ul class='plan_box__features'>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>完全個別のマンツーマン授業</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>５回の授業</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>面接用の正装購入のサポート</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>ES写真撮影のサポート</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>ES添削３回分</p>
-                            </li>
-                        </ul><!-- plan_box__features -->
-                        <button class="button button--plans" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeg8O-NA8kQhW4B70769kKKqunf4N9lRM3kOsw9YGzMDPtsDw/viewform?usp=sf_link';">
-                            プランを購入する
-                            <div class="button__horizontal"></div>
-                            <div class="button__vertical"></div>
-                        </button>
+            <div class='plans__slick_container'>
+                <div class='plans_section__plan_boxes'>
+                    <div class='plans_section__plan_box plan_box plan_box--basic'>
+                        <header class='plan_box__header'>
+                            <img class='plan_box__plan_icon plan_box__plan_icon--basic' src='./img/ico_plans_01--no.svg' alt='icon plan basic'>
+                            <h3 class='plan_box__title'>ベーシック・プラン</h3>
+                        </header>
+                        <p class='plan_box__price'>75,000<span>円（税抜き）</span></p>
+                        <div class='plan_box--bottom-half'>
+                            <ul class='plan_box__features'>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>完全個別のマンツーマン授業</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>５回の授業</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>面接用の正装購入のサポート</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>ES写真撮影のサポート</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>ES添削３回分</p>
+                                </li>
+                            </ul><!-- plan_box__features -->
+                            <button class="button button--plans" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeg8O-NA8kQhW4B70769kKKqunf4N9lRM3kOsw9YGzMDPtsDw/viewform?usp=sf_link';">
+                                プランを購入する
+                                <div class="button__horizontal"></div>
+                                <div class="button__vertical"></div>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class='plans_section__plan_box plan_box plan_box--standard'>
-                    <header class='plan_box__header'>
-                        <img class='plan_box__plan_icon plan_box__plan_icon--standard' src='./img/ico_plans_02--no.svg' alt=''>
-                        <h3 class='plan_box__title'>スタンダード・プラン</h3>
-                    </header>
-                    <p class='plan_box__price'>105,000<span>円（税抜き）</p>
-                    <div class='plan_box--bottom-half'>
-                        <ul class='plan_box__features'>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>完全個別のマンツーマン授業</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>７回の授業</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>面接用の正装購入のサポート</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>ES写真撮影のサポート</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>ES添削３回分</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>セミナー後の専用サロン入会</p>
-                            </li>
-                        </ul><!-- plan_box__features -->
-                        <button class="button button--plans" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfzgSXn7HLdjl5egeCYPogjEBEQrO8x0OOoCguSe-qACSA_4Q/viewform?usp=sf_link';">
-                            プランを購入する
-                            <div class="button__horizontal"></div>
-                            <div class="button__vertical"></div>
-                        </button>
+                    <div class='plans_section__plan_box plan_box plan_box--standard'>
+                        <header class='plan_box__header'>
+                            <img class='plan_box__plan_icon plan_box__plan_icon--standard' src='./img/ico_plans_02--no.svg' alt=''>
+                            <h3 class='plan_box__title'>スタンダード・プラン</h3>
+                        </header>
+                        <p class='plan_box__price'>105,000<span>円（税抜き）</p>
+                        <div class='plan_box--bottom-half'>
+                            <ul class='plan_box__features'>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>完全個別のマンツーマン授業</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>７回の授業</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>面接用の正装購入のサポート</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>ES写真撮影のサポート</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>ES添削３回分</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>セミナー後の専用サロン入会</p>
+                                </li>
+                            </ul><!-- plan_box__features -->
+                            <button class="button button--plans" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfzgSXn7HLdjl5egeCYPogjEBEQrO8x0OOoCguSe-qACSA_4Q/viewform?usp=sf_link';">
+                                プランを購入する
+                                <div class="button__horizontal"></div>
+                                <div class="button__vertical"></div>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class='plans_section__plan_box plan_box plan_box--premium'>
-                    <header class='plan_box__header'>
-                        <img class='plan_box__plan_icon plan_box__plan_icon--premium' src='./img/ico_plans_03--no.svg' alt=''>
-                        <h3 class='plan_box__title'>プレミアム・プラン</h3>
-                    </header>
-                    <p class='plan_box__price'>150,000<span>円（税抜き）</p>
-                    <div class='plan_box--bottom-half'>
-                        <ul class='plan_box__features'>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>完全個別のマンツーマン授業</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>１０回の授業</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>専用テキスト付属</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>面接用の正装購入のサポート</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>ES写真撮影のサポート</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>ES添削３回分</p>
-                            </li>
-                            <li class='plan_box__feature'>
-                                <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
-                                <p class='plan_box__feature_text'>セミナー後の専用サロン入会</p>
-                            </li>
-                        </ul><!-- plan_box__features -->
-                        <button class="button button--plans" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd0XI5nE1tHMDb5FzHJuUCfoEMRMzZkfYeQrdBGqL_k-e0BIQ/viewform?usp=sf_link';">
-                            プランを購入する
-                            <div class="button__horizontal"></div>
-                            <div class="button__vertical"></div>
-                        </button>
+                    <div class='plans_section__plan_box plan_box plan_box--premium'>
+                        <header class='plan_box__header'>
+                            <img class='plan_box__plan_icon plan_box__plan_icon--premium' src='./img/ico_plans_03--no.svg' alt=''>
+                            <h3 class='plan_box__title'>プレミアム・プラン</h3>
+                        </header>
+                        <p class='plan_box__price'>150,000<span>円（税抜き）</p>
+                        <div class='plan_box--bottom-half'>
+                            <ul class='plan_box__features'>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>完全個別のマンツーマン授業</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>１０回の授業</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>専用テキスト付属</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>面接用の正装購入のサポート</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>ES写真撮影のサポート</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>ES添削３回分</p>
+                                </li>
+                                <li class='plan_box__feature'>
+                                    <img class='plan_box__feature_img' src='./img/ico_plans_check.svg' alt='icon checkmark'>
+                                    <p class='plan_box__feature_text'>セミナー後の専用サロン入会</p>
+                                </li>
+                            </ul><!-- plan_box__features -->
+                            <button class="button button--plans" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd0XI5nE1tHMDb5FzHJuUCfoEMRMzZkfYeQrdBGqL_k-e0BIQ/viewform?usp=sf_link';">
+                                プランを購入する
+                                <div class="button__horizontal"></div>
+                                <div class="button__vertical"></div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -581,7 +587,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="assets/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src='assets/slick.min.js'></script>
     <script src='js/bundle.js'></script>
 </body>
 </html>

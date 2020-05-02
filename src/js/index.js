@@ -98,9 +98,7 @@ $(document).ready(() => {
         $('.plans_section__plan_boxes').slick({
             autoplay: true,
             autoplaySpeed: 3000,
-            dots: false,
-            prevArrow: false,
-            nextArrow: false
+            arrows: true
         })
         $(".class_name_box").click(function () {
             $header = $(this);
@@ -191,6 +189,6 @@ $(document).ready(function() {
             slideTo(slide)
             slideIndex++;
             if (slideIndex == slides.length) slideIndex = 0; 
-        }, 3000);
+        }, 1500);
     }
 });
