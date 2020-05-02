@@ -22,6 +22,9 @@
     @include ss_414x896 {
         font-size: 50%;
     }
+    @include ss_320x568 {
+        font-size: 40%;
+    }
 }
 
 .owl-stage {
@@ -125,6 +128,10 @@ html {
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+
+            @include ss_962x601 {
+                background-attachment: scroll;
+            }
             
             .header_nav {
                 font-family: $font-sans-serif;
@@ -351,6 +358,9 @@ html {
                         padding-top: 10rem;
                         margin-left: 1rem;
                     }
+                    @include ss_320x568 {
+                        padding-top: 7rem;
+                    }
                     .hero__textbox_title_group {
                         @include ss_1200--tall {
                             display: flex;
@@ -414,6 +424,7 @@ html {
                                 align-items: center;
                             }
                             .collab__node_text {
+                                white-space: nowrap;
                                 margin-left: 0.5rem;
                                 font-size: 1.9rem;
                                 font-weight: 400;
@@ -598,15 +609,17 @@ html {
                         .banner__img--02,
                         .banner__group_img--02 { height: 4rem; }
                         .banner__img--03,
-                        .banner__group_img--03  { height: 3rem; }
+                        .banner__group_img--03 { height: 3rem; }
                         .banner__img--04,
-                        .banner__group_img--04  { height: 2.5rem; }
+                        .banner__group_img--04 { height: 2.5rem; }
                         .banner__img--05,
-                        .banner__group_img--05  { height: 1.5rem; }
+                        .banner__group_img--05 { height: 1.5rem; }
                         .banner__img--06,
-                        .banner__group_img--06  { height: 2.5rem; }
+                        .banner__group_img--06 { height: 2.5rem; }
+                        .banner__img--07,
+                        .banner__group_img--07 { height: 2.2rem; }
                         .banner__img--08,
-                        .banner__group_img--08  { height: 3.5rem; }
+                        .banner__group_img--08 { height: 3.5rem; }
                         // @include ss_414x896 {
                         //     .banner__img--01 { height: 1.5rem; }
                         //     .banner__img--04 { height: 2rem; }
@@ -641,6 +654,22 @@ html {
                                 .banner__group_img--07,
                                 .banner__group_img--08 {
                                     display: none;
+                                }
+                            }
+                        }
+                        @include ss_320x568 {
+                            .banner__group {
+                                .banner__group_img--01 {
+                                    height: 1rem;
+                                }
+                                .banner__group_img--02 {
+                                    height: 2rem;
+                                }
+                                .banner__group_img--03 {
+                                    height: 2rem;
+                                }
+                                .banner__group_img--04 {
+                                    height: 1.5rem;
                                 }
                             }
                         }
@@ -751,6 +780,9 @@ html {
                 }
                 @include ss_414x896 {
                     padding: 2rem 5rem;
+                }
+                @include ss_320x568 {
+                    padding: 2rem 3rem;
                 }
                 .profile_section__title {
                     margin-bottom: 3rem;
@@ -1141,6 +1173,10 @@ html {
                 @include ss_800x1280 {
                     padding: 5rem 10%;
                 }
+                @include ss_320x568 {
+                    padding: 4rem 5%;
+                    padding-bottom: 8rem;
+                }
                 .plans_section__title {
                     align-self: flex-end;
                     font-size: 1.4rem;
@@ -1173,6 +1209,9 @@ html {
                             &:after {
                                 display: none;
                             }
+                        }
+                        @include ss_320x568 {
+                            height: 35rem;
                         }
                         &:before,
                         &:after {
@@ -1224,6 +1263,9 @@ html {
                             span {
                                 font-size: 1rem;
                             }
+                            @include ss_320x568 {
+                                padding: 1rem;
+                            }
                         }
                         .plan_box--bottom-half {
                             @include ss_601x962 {
@@ -1244,6 +1286,9 @@ html {
                                 }
                                 @include ss_414x896 {
                                     padding-top: 3rem;
+                                }
+                                @include ss_320x568 {
+                                    padding-top: 1.5rem;
                                 }
                                 .plan_box__feature {
                                     display: flex;

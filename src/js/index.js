@@ -97,7 +97,7 @@ $(document).ready(() => {
         // })
         $('.plans_section__plan_boxes').slick({
             autoplay: true,
-            autoplaySpeed: 1500,
+            autoplaySpeed: 3000,
             dots: false,
             prevArrow: false,
             nextArrow: false
