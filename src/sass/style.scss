@@ -27,12 +27,6 @@
     }
 }
 
-.owl-stage {
-    display: flex;
-    align-items: center;
-    margin: 10;
-}
-
 .button {
     --offset: 5px;
     --border-size: 1px;
@@ -1426,6 +1420,11 @@ html {
                     ul {
                         li {
                             margin-bottom: 0.5rem;
+                            a {
+                                font-weight: 300;
+                                font-size: 1.4rem;
+                                @include normalize-link(white);
+                            }
                         }
                     }
                 }

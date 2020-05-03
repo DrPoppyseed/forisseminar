@@ -47,3 +47,6 @@ I・Kさん
 世界でも通用するプロ意識を育て、面接から現場まで自信をもって対応できる人を育てる。我々が大事にする指導の軸です。
 
 Create a function that fills the bar when in transition to next item in 'steps_section'
+
+
+『世界に対応できるプロ意識を育て、面接から現場まで自信をもって対応できる人を育てる。我々が大事にする指導の軸です。

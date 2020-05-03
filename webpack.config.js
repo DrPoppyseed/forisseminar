@@ -6,7 +6,13 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-    entry: ['./src/js/index.js', './src/sass/style.scss'],
+    entry: [
+        './src/js/index.js', 
+        './src/sass/style.scss', 
+        './src/sass/cookie-policy-style.scss', 
+        './src/sass/privacy-policy-style.scss', 
+        './src/sass/user-agreement-style.scss'
+    ],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js'
@@ -40,9 +46,42 @@ module.exports = {
                 collapseWhitespace: true
             }
         }),
+        new HtmlWebpackPlugin({
+            filename: 'privacy-policy.html',
+            template: './src/privacy-policy.html',
+            minify: {
+                collapseWhitespace: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'cookie-policy.html',
+            template: './src/cookie-policy.html',
+            minify: {
+                collapseWhitespace: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'user-agreement.html',
+            template: './src/user-agreement.html',
+            minify: {
+                collapseWhitespace: true
+            }
+        }),
         new MiniCssExtractPlugin({
             filename: "css/style.css",
             template: "./src/sass/style.scss"
+        }),
+        new MiniCssExtractPlugin({
+            filename: "css/cookie-policy-style.css",
+            template: "./src/sass/cookie-policy-style.scss"
+        }),
+        new MiniCssExtractPlugin({
+            filename: "css/privacy-policy-style.css",
+            template: "./src/sass/privacy-policy-style.scss"
+        }),
+        new MiniCssExtractPlugin({
+            filename: "css/user-agreement-style.css",
+            template: "./src/sass/user-agreement-style.scss"
         }),
         new CompressionPlugin({
             test: /\.(js|css)/
