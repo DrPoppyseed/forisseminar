@@ -29,6 +29,13 @@ html {
             z-index: 5;
             position: fixed;
             width: 100%;
+            .crumb_trail {
+                display: inline-block;
+                padding: 1.2rem;
+                margin-left: 5rem;
+                font-size: 1rem;
+                @include normalize-link(white);
+            }
             .header_nav__logo {
                 position: absolute;
                 left: 50%;
@@ -72,6 +79,95 @@ html {
                     background: white;
                 }
             }
+        }
+        main {
+            padding-left: 12%;
+            padding-right: 12%;
+            @include ss_962x601 {
+                padding-left: 8%;
+                padding-right: 8%;
+            }
+            @include ss_414x896 {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            p {
+                font-size: 1.4rem;
+                line-height: 2.5rem;
+            }
+            section {
+                padding-top: 5rem;
+                h2 {
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                }
+            }
+            .page__header {
+                padding-top: 8rem;
+                .hero__title {
+                    font-size: 3rem;
+                    text-align: center;
+                    margin-bottom: 4rem;
+                    &:after {
+                        @include border-line(70%, 1rem, white);
+                    }
+                }
+                .hero__text {
+                    margin-bottom: 4rem;
+                }
+            }
+            .body_section {
+                ul {
+                    margin-top: 1rem;
+                    li {
+                        margin-left: 2rem;
+                        font-size: 1.4rem;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+                &--10 {
+                    .section__text {
+                        .contact_info--email {
+                            margin-top: 1rem;
+                            margin-bottom: 1rem;
+                            display: block;
+                            font-size: 1.4rem;
+                            font-family: $font-sans-serif;
+                        }
+                        a:link {
+                            color: rgba(166, 172, 255, 0.5);
+                        }
+                        a:hover,
+                        a:visited {
+                            color: #a6acff;
+                        }
+                    }
+                }
+                &--12 {
+                    margin-bottom: 10rem;
+                    .contact_info_container {
+                        font-size: 1.4rem;
+                        font-family: $font-sans-serif;
+                        .contact_info_container__email {
+                            a {
+                                font-size: 1.4rem;
+                            }
+                            a:link {
+                                color: rgba(166, 172, 255, 0.5);
+                            }
+                            a:hover,
+                            a:visited {
+                                color: #a6acff;
+                            }
+                        }
+                    }
+                    .warning {
+                        margin-top: 0.5rem;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+
         }
         footer {
             background-color: #535353;

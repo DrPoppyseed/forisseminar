@@ -29,6 +29,13 @@ html {
             z-index: 5;
             position: fixed;
             width: 100%;
+            .crumb_trail {
+                display: inline-block;
+                padding: 1.2rem;
+                margin-left: 5rem;
+                font-size: 1rem;
+                @include normalize-link(white);
+            }
             .header_nav__logo {
                 position: absolute;
                 left: 50%;
@@ -70,6 +77,56 @@ html {
                     width: 0%;
                     height: 1px;
                     background: white;
+                }
+            }
+        }
+        main {
+            padding-left: 12%;
+            padding-right: 12%;
+            @include ss_962x601 {
+                padding-left: 8%;
+                padding-right: 8%;
+            }
+            @include ss_414x896 {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            p {
+                font-size: 1.4rem;
+                line-height: 2.5rem;
+            }
+            section {
+                padding-top: 5rem;
+                h2 {
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                }
+            }
+            .page__header {
+                padding-top: 8rem;
+                .hero__title {
+                    font-size: 3rem;
+                    text-align: center;
+                    margin-bottom: 4rem;
+                    &:after {
+                        @include border-line(70%, 1rem, white);
+                    }
+                }
+                .hero__text {
+                    margin-bottom: 4rem;
+                }
+            }
+            .body_section {
+                ul {
+                    margin-top: 1rem;
+                    li {
+                        margin-left: 2rem;
+                        font-size: 1.4rem;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+                &--04 {
+                    margin-bottom: 10rem;
                 }
             }
         }
