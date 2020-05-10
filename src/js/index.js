@@ -30,6 +30,41 @@ $(document).ready(() => {
     });
 });
 
+$(document).ready(function () {
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 60,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+          1280: {
+            slidesPerView: 2,
+            spaceBetween: 100
+          },
+          1100: {
+              slidesPerView: 2,
+              spaceBetween: 60
+          },
+          900: {
+              slidesPerView: 2,
+              spaceBetween: 40
+          },
+          600: {
+              slidesPerView: 1,
+              spaceBetween: 100
+          }
+      }
+    });
+  });
+
 $(document).ready(() => {
     var $windowWidth = $(window).width();
     var $windowHeight = $(window).height();
