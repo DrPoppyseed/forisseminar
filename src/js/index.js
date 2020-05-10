@@ -1,3 +1,7 @@
+import Cookies from 'js-cookie';
+console.log(Cookies.get());
+
+
 $(document).ready(() => {
     $('.js--scroll-to-reasons').click(function() {
         $('html, body').animate({scrollTop: $('.js--section-banner').offset().top}, 500)

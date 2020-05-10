@@ -168,94 +168,6 @@ html {
                     .header_nav__item--top {
                         cursor: pointer;
                     }
-                    // .menuToggle {
-                    //     position: relative;
-                    //     -webkit-user-select: none;
-                    //     user-select: none;
-                    //     display: none;
-                    //     @include ss_414x896 {
-                    //         display: inline-block;
-                    //     }
-                    //     a {
-                    //         text-decoration: none;
-                    //         color: #232323;
-                    //         transition: color 0.3s ease;
-                    //         &:hover {
-                    //             color: tomato;
-                    //         }
-                    //     }
-                    //     input {
-                    //         display: block;
-                    //         width: 4rem;
-                    //         height: 100%;
-                    //         position: absolute;
-                    //         top: -7px;
-                    //         left: -5px;
-                            
-                    //         cursor: pointer;
-                            
-                    //         opacity: 0; /* hide this */
-                    //         z-index: 2; /* and place it over the hamburger */
-                            
-                    //         -webkit-touch-callout: none;
-                    //         &:checked ~ span {
-                    //             opacity: 1;
-                    //             transform: rotate(45deg) translate(-2px, -1px);
-                    //             background: #232323;
-                    //         }
-                    //         &:checked ~ span:nth-last-child(3) {
-                    //             opacity: 0;
-                    //             transform: rotate(0deg) scale(0.2, 0.2);
-                    //         }
-                    //         &:checked ~ span:nth-last-child(2) {
-                    //             transform: rotate(-45deg) translate(0, -1px);
-                    //         }
-                    //         &:checked ~ ul {
-                    //             transform: none;
-                    //         }
-                    //     }
-                    //     span {
-                    //         display: block;
-                    //         width: 2.5rem;
-                    //         height: 0.1rem;
-                    //         margin-bottom: 0.4rem;
-                    //         position: relative;
-                    //         background: whitesmoke;
-                    //         z-index: 1;
-                    //         transform-origin: 0.43rem 0;
-                            
-                    //         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    //         background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    //         opacity 0.55s ease;
-                    
-                    //         &:first-child {
-                    //             transform-origin: 0% 0%;
-                    //         }
-                    //         &:nth-last-child(2) {
-                    //             transform-origin: 0% 510%;
-                    //         }
-                    //     }
-                    //     .menu {
-                    //         position: absolute;
-                    //         width: 100%;
-                    //         margin: -100px 0 0 -50px;
-                    //         padding: 50px;
-                    //         padding-top: 125px;
-                            
-                    //         background: #ededed;
-                    //         list-style-type: none;
-                    //         -webkit-font-smoothing: antialiased;
-                            
-                    //         transform-origin: 0% 0%;
-                    //         transform: translate(100%, 0);
-                            
-                    //         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-                    //         li {
-                    //             padding: 10px 0;
-                    //             font-size: 22px;
-                    //         }
-                    //     }
-                    // }
                 }
                 .progress__container {
                     width: 100%;
@@ -527,30 +439,6 @@ html {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    // .banner_carousel {
-                    //     display: none;
-                    //     @include ss_414x896 {
-                    //         display: flex;
-                    //         flex-direction: row;
-                    //         align-items: center;
-                    //         .img__container {
-                    //             display: flex;
-                    //             justify-content: center;
-                    //             align-items: center;
-                    //             margin-right: 2rem;
-                    //             width: 20%;
-                    //         }
-                    //         .img__container--08 { margin-right: 0; }
-                    //         .carousel__img--01 { height: 1.5rem; }
-                    //         .carousel__img--02 { height: 2rem; }
-                    //         .carousel__img--03 { height: 2rem; }
-                    //         .carousel__img--04 { height: 2rem; }
-                    //         .carousel__img--05 { height: 1rem; }
-                    //         .carousel__img--06 { height: 1.5rem }
-                    //         .carousel__img--07 { height: 2rem; }
-                    //         .carousel__img--08 { height: 2rem; }
-                    //     }
-                    // }
                     .banner__group {
                         display: none;
                     }
@@ -617,13 +505,6 @@ html {
                         .banner__group_img--07 { height: 2.2rem; }
                         .banner__img--08,
                         .banner__group_img--08 { height: 3.5rem; }
-                        // @include ss_414x896 {
-                        //     .banner__img--01 { height: 1.5rem; }
-                        //     .banner__img--04 { height: 2rem; }
-                        //     .banner__img--05 { height: 1.5rem; }
-                        //     .banner__img--07 { height: 2rem; }
-                        //     .banner__img--08 { height: 2rem; }
-                        // }
                         @include ss_414x896 {
                             .banner__img {
                                 display: none;
@@ -670,14 +551,6 @@ html {
                                 }
                             }
                         }
-                        // @include ss_414x896 {
-                        //     .banner__img {
-                        //         display: none;
-                        //     }
-                        //     .banner__group {
-                        //         display: none;
-                        //     }
-                        // }
                     }
                 }
             }
